@@ -1,0 +1,527 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, ../sass/_reset.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 16, ../sass/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 19, ../sass/_reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../sass/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 25, ../sass/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 29, ../sass/_reset.scss */
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+/* line 34, ../sass/_reset.scss */
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 38, ../sass/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "HeliosCond";
+  src: url("../fonts/HeliosCondRegular/HeliosCondRegular.eot");
+  src: url("../fonts/HeliosCondRegular/HeliosCondRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondRegular/HeliosCondRegular.woff") format("woff"), url("../fonts/HeliosCondRegular/HeliosCondRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "HeliosCond";
+  src: url("../fonts/HeliosCondItalic/HeliosCondItalic.eot");
+  src: url("../fonts/HeliosCondItalic/HeliosCondItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondItalic/HeliosCondItalic.woff") format("woff"), url("../fonts/HeliosCondItalic/HeliosCondItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "HeliosCond";
+  src: url("../fonts/HeliosCondBold/HeliosCondBold.eot");
+  src: url("../fonts/HeliosCondBold/HeliosCondBold.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondBold/HeliosCondBold.woff") format("woff"), url("../fonts/HeliosCondBold/HeliosCondBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "HeliosCond";
+  src: url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.eot");
+  src: url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.woff") format("woff"), url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "HeliosCond";
+  src: url("../fonts/helios-cond-light_[allfont.ru].ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "IntroBlack";
+  src: url("../fonts/IntroBlack.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* line 44, ../sass/style.sass */
+.wrapper {
+  margin: 0 auto;
+  max-width: 1185px;
+}
+
+/* line 48, ../sass/style.sass */
+a {
+  text-decoration: none;
+}
+
+/* line 51, ../sass/style.sass */
+.clearfix:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+/* line 56, ../sass/style.sass */
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+/* line 59, ../sass/style.sass */
+*:focus {
+  outline: 0;
+  text-decoration: none;
+}
+
+/* line 62, ../sass/style.sass */
+.subheader {
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  background: #ff000b;
+  line-height: 1;
+}
+
+/* line 75, ../sass/style.sass */
+.button {
+  font-family: "IntroBlack", arial, sans-serif;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 2px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* line 85, ../sass/style.sass */
+body {
+  font-family: "HeliosCond", arial, sans-serif;
+  font-weight: bold;
+}
+
+/* line 89, ../sass/style.sass */
+.header {
+  height: 100px;
+  background: #f42c37;
+  font-family: "IntroBlack", arial, sans-serif;
+}
+/* line 93, ../sass/style.sass */
+.header .logo {
+  width: 280px;
+  height: 75px;
+  margin-top: 15px;
+  float: left;
+}
+/* line 98, ../sass/style.sass */
+.header-nav {
+  float: left;
+  margin: 40px 20px 0;
+}
+/* line 101, ../sass/style.sass */
+.header-nav li {
+  display: inline-block;
+  padding: 0 13px;
+  border-right: 1px solid #fff;
+}
+/* line 105, ../sass/style.sass */
+.header-nav li:first-child {
+  padding-left: 0;
+}
+/* line 107, ../sass/style.sass */
+.header-nav li:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+/* line 110, ../sass/style.sass */
+.header-nav li a {
+  position: relative;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+}
+/* line 115, ../sass/style.sass */
+.header-nav li a:before {
+  display: block;
+  background: #fff;
+  height: 2px;
+  content: "";
+  width: 0;
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transition: all 0.5s ease;
+}
+/* line 125, ../sass/style.sass */
+.header-nav li a:hover:before {
+  width: 100%;
+  left: 0%;
+}
+/* line 128, ../sass/style.sass */
+.header-callback {
+  width: 182px;
+  float: right;
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+/* line 138, ../sass/style.sass */
+.header-callback em {
+  display: block;
+  font-size: 16px;
+}
+/* line 141, ../sass/style.sass */
+.header-callback .callback {
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px 0;
+  transition-duration: 0.3s;
+}
+/* line 146, ../sass/style.sass */
+.header-callback .callback:hover {
+  background: #fff;
+  color: #f42c37;
+}
+
+/* line 149, ../sass/style.sass */
+.slider {
+  position: relative;
+  width: 1180px;
+  height: 570px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: left;
+}
+/* line 156, ../sass/style.sass */
+.slider li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 450px;
+  padding: 40px 145px;
+  box-sizing: border-box;
+  line-height: 1.33333;
+  z-index: 1;
+  opacity: 0;
+  transition-duration: 0.7s;
+}
+/* line 168, ../sass/style.sass */
+.slider li.active {
+  opacity: 1;
+}
+/* line 170, ../sass/style.sass */
+.slider h4 {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+/* line 173, ../sass/style.sass */
+.slider p {
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: 300;
+}
+/* line 177, ../sass/style.sass */
+.slider-arrows {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 45px);
+}
+/* line 181, ../sass/style.sass */
+.slider-arrows span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 0 24px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #ff000b;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+}
+/* line 194, ../sass/style.sass */
+.slider-arrows span:hover {
+  background-color: #f22831;
+}
+/* line 196, ../sass/style.sass */
+.slider-arrows span.arrow-left {
+  float: left;
+  background-image: url("../img/icons/arrow-left.png");
+}
+/* line 199, ../sass/style.sass */
+.slider-arrows span.arrow-right {
+  float: right;
+  background-image: url("../img/icons/arrow-right.png");
+}
+
+/* line 203, ../sass/style.sass */
+section {
+  padding-top: 1px;
+  margin-top: -1px;
+}
+/* line 206, ../sass/style.sass */
+section.blur {
+  text-align: center;
+}
+/* line 208, ../sass/style.sass */
+section.blur h2 {
+  display: inline-block;
+  position: relative;
+  font-family: "IntroBlack", arial, sans-serif;
+  font-size: 100px;
+  color: #fff;
+  text-transform: uppercase;
+}
+/* line 215, ../sass/style.sass */
+section.blur h2:before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 140%;
+  background: rgba(255, 255, 255, 0.5);
+  top: 50%;
+  left: -20%;
+}
+
+/* line 223, ../sass/style.sass */
+.first {
+  text-align: center;
+  background: url("../img/bg-1.jpg");
+  background-size: cover;
+  height: 2740px;
+}
+/* line 228, ../sass/style.sass */
+.first h2 {
+  margin: 45px 0 35px;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+/* line 232, ../sass/style.sass */
+.first h2 em {
+  display: block;
+  margin-top: 10px;
+  font-size: 42px;
+}
+/* line 236, ../sass/style.sass */
+.first .subheader {
+  font-size: 72px;
+}
+/* line 238, ../sass/style.sass */
+.first .slider {
+  margin: 1640px auto 0;
+}
+
+/* line 240, ../sass/style.sass */
+.second, .ninth, .eleventh, .thirteenth, .fifteenth {
+  height: 350px;
+  line-height: 350px;
+}
+
+/* line 243, ../sass/style.sass */
+.second {
+  background: url("../img/bg-2.jpg");
+  background-size: cover;
+}
+
+/* line 246, ../sass/style.sass */
+.third, .fifth {
+  position: relative;
+  background: #000;
+  padding-bottom: 130px;
+}
+/* line 250, ../sass/style.sass */
+.third .wrapper, .fifth .wrapper {
+  position: relative;
+  z-index: 1;
+}
+/* line 253, ../sass/style.sass */
+.third:before, .third:after, .fifth:before, .fifth:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 0;
+}
+/* line 258, ../sass/style.sass */
+.third:before, .fifth:before {
+  top: 0;
+  background: url("../img/bg-3-top.png") no-repeat center;
+  background-size: cover;
+  height: 373px;
+}
+/* line 263, ../sass/style.sass */
+.third:after, .fifth:after {
+  bottom: 0;
+  background: url("../img/bg-3-bot.png") no-repeat center;
+  background-size: cover;
+  height: 271px;
+}
+/* line 268, ../sass/style.sass */
+.third .subheader, .fifth .subheader {
+  margin-top: 5px;
+  font-size: 48px;
+  line-height: 1.25;
+  padding: 0 5px;
+}
+/* line 273, ../sass/style.sass */
+.third .subheader:first-child, .fifth .subheader:first-child {
+  margin-top: 115px;
+}
+/* line 275, ../sass/style.sass */
+.third .more, .fifth .more {
+  margin-top: 45px;
+  line-height: 1.25;
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+}
+
+/* line 281, ../sass/style.sass */
+.fourth {
+  height: 625px;
+  background: url("../img/bg-4.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+/* line 285, ../sass/style.sass */
+.fourth .wrapper {
+  margin-top: 35px;
+}
+/* line 287, ../sass/style.sass */
+.fourth li {
+  position: relative;
+  float: left;
+  width: 220px;
+  margin-right: 100px;
+  margin-bottom: 67px;
+  text-align: center;
+  font-size: 208px;
+  color: #fff;
+}
+/* line 296, ../sass/style.sass */
+.fourth li:nth-child(4n) {
+  margin-right: 0;
+}
+/* line 298, ../sass/style.sass */
+.fourth li > * {
+  position: absolute;
+}
+/* line 300, ../sass/style.sass */
+.fourth li .subheader {
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 36px;
+  width: 160px;
+}
+/* line 307, ../sass/style.sass */
+.fourth li .text {
+  top: 146px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 24px;
+  line-height: 33px;
+  color: #000;
+}
+/* line 315, ../sass/style.sass */
+.fourth li .text:first-line {
+  font-weight: 300;
+}
+
+/* line 317, ../sass/style.sass */
+.sixth {
+  height: 650px;
+  background: url("../img/map.jpg") no-repeat center;
+  background-size: cover;
+}
+
+/* line 321, ../sass/style.sass */
+.seventh {
+  height: 650px;
+  background: url("../img/panorama.jpg");
+  background-size: cover;
+}
+/* line 325, ../sass/style.sass */
+.seventh h2 {
+  margin-top: 90px;
+}
+
+/* line 327, ../sass/style.sass */
+.ninth {
+  background: url("../img/bg-9.jpg") center;
+  background-size: cover;
+}
+
+/* line 330, ../sass/style.sass */
+.eleventh {
+  background: url("../img/bg-11.jpg") center;
+  background-size: cover;
+}
+
+/* line 333, ../sass/style.sass */
+.thirteenth {
+  background: url("../img/bg-13.jpg") center;
+  background-size: cover;
+}
+
+/* line 336, ../sass/style.sass */
+.fifteenth {
+  background: url("../img/bg-15.jpg") center;
+  background-size: cover;
+}
