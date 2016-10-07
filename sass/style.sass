@@ -61,6 +61,7 @@ textarea
 	text-decoration: none
 .subheader
 	display: inline-block
+	padding: 2px 9px
 	text-transform: uppercase
 	color: #fff
 	font-weight: bold
@@ -81,12 +82,27 @@ textarea
 	border-radius: 20px
 	color: #fff
 	text-transform: uppercase
+	cursor: pointer
+	&.button-red
+		border: 5px solid #ff000b
+		width: 580px
+		font-size: 24px
+		height: 60px
+		background: none
+		border-radius: 30px
+		transition-duration: .5s
+		&:hover
+			border-color: #fff
 // GENERAL
 body
 	font-family: 'HeliosCond', arial, sans-serif
 	font-weight: bold
-	
+	background: #000
 .header
+	position: fixed
+	top: 0
+	z-index: 999
+	width: 100%
 	height: 100px
 	background: #f42c37
 	font-family: 'IntroBlack', arial, sans-serif
@@ -206,29 +222,33 @@ section
 	&.blur
 		text-align: center
 		h2
-			display: inline-block
 			position: relative
 			font-family: 'IntroBlack', arial, sans-serif
 			font-size: 100px
 			color: #fff
+			text-align: center
 			text-transform: uppercase
 			&:before
 				position: absolute
 				content: ''
 				height: 1px
-				width: 140%
+				width: 1180px
 				background: rgba(255, 255, 255, .5)
 				top: 50%
-				left: -20%
+				left: 0
+				right: 0
+				margin: auto
 .first
+	margin-top: 100px
 	text-align: center
 	background: url('../img/bg-1.jpg')
 	background-size: cover
 	height: 2740px
 	h2
-		margin: 45px 0 35px
+		margin: 145px 0 35px
 		text-transform: uppercase
 		font-size: 24px
+		color: #000
 		em
 			display: block
 			margin-top: 10px
@@ -244,12 +264,25 @@ section
 	background: url('../img/bg-2.jpg')
 	background-size: cover
 .third, .fifth
-	position: relative
-	background: #000
 	padding-bottom: 130px
 	.wrapper
 		position: relative
 		z-index: 1
+	.subheader
+		margin-top: 5px
+		font-size: 48px
+		line-height: 1.25
+		padding: 0 5px
+		&:first-child
+			margin-top: 115px
+	.more
+		margin-top: 45px
+		line-height: 1.25
+		font-size: 24px
+		font-weight: 300
+		color: #fff
+.light
+	position: relative
 	&:before, &:after
 		position: absolute
 		content: ''
@@ -265,36 +298,50 @@ section
 		background: url('../img/bg-3-bot.png') no-repeat center
 		background-size: cover
 		height: 271px
-	.subheader
-		margin-top: 5px
-		font-size: 48px
-		line-height: 1.25
-		padding: 0 5px
-		&:first-child
-			margin-top: 115px
-	.more
-		margin-top: 45px
-		line-height: 1.25
-		font-size: 24px
-		font-weight: 300
-		color: #fff
 .fourth
 	height: 625px
 	background: url('../img/bg-4.jpg') no-repeat center fixed
 	background-size: cover
 	.wrapper
 		margin-top: 35px
+		position: relative
+		overflow: hidden
+		&:before, &:after
+			position: absolute
+			top: 30%
+			content: ''
+			width: 1px
+			height: 39%
+			border-right: 1px dotted #000
+		&:before
+			left: 5px
+		&:after
+			right: 5px
+
 	li
 		position: relative
 		float: left
-		width: 220px
-		margin-right: 100px
-		margin-bottom: 67px
+		width: 250px
+		height: 220px
+		margin-right: 60px
+		margin-bottom: 55px
 		text-align: center
 		font-size: 208px
 		color: #fff
+		&:after
+			position: absolute
+			top: 118px
+			right: -95px
+			content: ''
+			height: 1px
+			width: 119px
+			border-top: 1px dotted #000
 		&:nth-child(4n)
 			margin-right: 0
+			&:after
+				display: none
+		&:first-child
+			background: url('../img/icons/clock.png') no-repeat 13px center
 		> *
 			position: absolute
 		.subheader
@@ -324,15 +371,174 @@ section
 	background-size: cover
 	h2
 		margin-top: 90px
+.eigth
+	height: 1120px
+	h2
+		margin-top: 110px
+
 .ninth
 	background: url('../img/bg-9.jpg') center
 	background-size: cover
+.tenth
+	counter-reset: number
+	padding-bottom: 1px
+	.wrapper
+		margin: 60px auto 45px
+
+	li
+		position: relative
+		box-sizing: border-box
+		width: 260px
+		height: 390px
+		margin: 0 30px 30px 0
+		padding: 10px 20px
+		float: left
+		background: #e5e5e5
+		font-size: 24px
+		cursor: pointer
+		transition-duration: .5s
+		&:before
+			position: absolute
+			top: 60px
+			left: 30px
+			counter-increment: number
+			content: counter(number)
+			font-size: 100px
+			color: #5490b2
+			font-weight: 300
+		&:hover
+			box-shadow: 0 0 60px 8px #ff000b
+		img
+			margin-left: 35px
+		.subheader
+			margin-top: 4px
+		.last
+			display: block
+			margin-top: 20px
+			line-height: 24px
+			color: #433c3c
+			font-weight: 300
+
 .eleventh
 	background: url('../img/bg-11.jpg') center
 	background-size: cover
+.twelfth
+	padding: 55px 0 85px
+	&:before
+		top: -65px
+		background: url('../img/bg-12.png') no-repeat center
+		background-size: cover
+		height: 292px
+	&:after
+		bottom: -35px
+		background: url('../img/bg-12.png') no-repeat center
+		background-size: cover
+		height: 292px
+	.grid
+		padding: 0
+		max-width: 1220px
+		z-index: 1
+		figure
+			width: 590px
+			height: 420px
+			max-width: none
+			max-height: none
+			margin: 10px
+			background: #212635
+		h2
+			font-size: 72px
+			font-weight: bold
+			padding: 30px 40px
+		p
+			font-size: 36px
+			font-weight: 300
+			width: 72%
+			text-align: left
+			em
+				font-weight: bold
+
 .thirteenth
 	background: url('../img/bg-13.jpg') center
 	background-size: cover
+.fourteenth
+	&:before
+		top: 0px
+		background: url('../img/bg-14-top.png') no-repeat center
+		background-size: cover
+		height: 165px
+	&:after
+		bottom: -45px
+		background: url('../img/bg-14-bot.png') no-repeat center
+		background-size: cover
+		height: 253px
+	.wrapper
+		position: relative
+		margin: 65px auto 100px
+		z-index: 1
+	.text
+		width: 620px
+		text-align: left
+	.subheader
+		font-size: 48px
+		margin-top: 10px
+	p
+		margin-top: 45px
+		font-size: 24px
+		font-weight: 300
+		line-height: 35px
+	.button
+		margin: 50px 0 27px
+	span
+		display: block
+		font-size: 16px
+		font-weight: 300
+		text-transform: uppercase
+		color: #7f7f7f
+	[class*="img-"]
+		position: absolute
+	.img-first
+		width: 540px
+		top: 11px
+		right: 0
+	.img-second
+		width: 552px
+		top: 415px
+		right: -35px
+		border: 20px solid #000
 .fifteenth
 	background: url('../img/bg-15.jpg') center
+	background-size: cover
+.sixteenth
+	padding-bottom: 1px
+	.wrapper
+		margin: 75px auto 105px
+		text-align: left
+	p
+		line-height: 1.5
+		font-size: 24px
+		font-weight: 300
+	img
+		display: block
+		margin: 30px auto 72px
+	.left-part, .right-part
+		
+	.left-part
+		float: left
+		width: 43%
+	.right-part
+		float: right
+		width: 50%
+		p
+			margin-top: 50px
+	.subheader
+		font-size: 48px
+		margin-top: 7px
+		text-transform: none
+	.button
+		margin-top: 60px
+		clear: both
+		float: right
+.seventeenth
+	height: 800px
+	background: url('../img/bg-17.jpg') center
 	background-size: cover
