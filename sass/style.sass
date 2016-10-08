@@ -1,33 +1,38 @@
 @import "reset"
 
 // FONT
+// @font-face
+// 	font-family: "HeliosCond"
+// 	src: url("../fonts/HeliosCondRegular/HeliosCondRegular.eot")
+// 	src: url("../fonts/HeliosCondRegular/HeliosCondRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondRegular/HeliosCondRegular.woff") format("woff"), url("../fonts/HeliosCondRegular/HeliosCondRegular.ttf") format("truetype")
+// 	font-style: normal
+// 	font-weight: normal
+
+// @font-face
+// 	font-family: "HeliosCond"
+// 	src: url("../fonts/HeliosCondItalic/HeliosCondItalic.eot")
+// 	src: url("../fonts/HeliosCondItalic/HeliosCondItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondItalic/HeliosCondItalic.woff") format("woff"), url("../fonts/HeliosCondItalic/HeliosCondItalic.ttf") format("truetype")
+// 	font-style: italic
+// 	font-weight: normal
+
+// @font-face
+// 	font-family: "HeliosCond"
+// 	src: url("../fonts/HeliosCondBold/HeliosCondBold.eot")
+// 	src: url("../fonts/HeliosCondBold/HeliosCondBold.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondBold/HeliosCondBold.woff") format("woff"), url("../fonts/HeliosCondBold/HeliosCondBold.ttf") format("truetype")
+// 	font-style: normal
+// 	font-weight: bold
+
+// @font-face
+// 	font-family: "HeliosCond"
+// 	src: url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.eot")
+// 	src: url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.woff") format("woff"), url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.ttf") format("truetype")
+// 	font-style: italic
+// 	font-weight: bold
 @font-face
 	font-family: "HeliosCond"
-	src: url("../fonts/HeliosCondRegular/HeliosCondRegular.eot")
-	src: url("../fonts/HeliosCondRegular/HeliosCondRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondRegular/HeliosCondRegular.woff") format("woff"), url("../fonts/HeliosCondRegular/HeliosCondRegular.ttf") format("truetype")
+	src: url("../fonts/HE_CN_.ttf") format("truetype")
 	font-style: normal
 	font-weight: normal
-
-@font-face
-	font-family: "HeliosCond"
-	src: url("../fonts/HeliosCondItalic/HeliosCondItalic.eot")
-	src: url("../fonts/HeliosCondItalic/HeliosCondItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondItalic/HeliosCondItalic.woff") format("woff"), url("../fonts/HeliosCondItalic/HeliosCondItalic.ttf") format("truetype")
-	font-style: italic
-	font-weight: normal
-
-@font-face 
-	font-family: "HeliosCond"
-	src: url("../fonts/HeliosCondBold/HeliosCondBold.eot")
-	src: url("../fonts/HeliosCondBold/HeliosCondBold.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondBold/HeliosCondBold.woff") format("woff"), url("../fonts/HeliosCondBold/HeliosCondBold.ttf") format("truetype")
-	font-style: normal
-	font-weight: bold
-
-@font-face
-	font-family: "HeliosCond"
-	src: url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.eot")
-	src: url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.woff") format("woff"), url("../fonts/HeliosCondBoldItalic/HeliosCondBoldItalic.ttf") format("truetype")
-	font-style: italic
-	font-weight: bold
 @font-face
 	font-family: "HeliosCond"
 	src: url("../fonts/helios-cond-light_[allfont.ru].ttf") format("truetype")
@@ -35,7 +40,7 @@
 	font-weight: 300
 @font-face
 	font-family: "IntroBlack"
-	src: url("../fonts/IntroBlack.ttf") format("truetype")
+	src: url("../fonts/IntroBlack.otf") format("opentype")
 	font-style: normal
 	font-weight: normal
 
@@ -67,7 +72,32 @@ textarea
 	font-weight: bold
 	background: #ff000b
 	line-height: 1
-
+h2.title
+	position: relative
+	font-family: 'IntroBlack', arial, sans-serif
+	font-size: 100px
+	color: #fff
+	text-align: center
+	text-transform: uppercase
+	& + i
+		position: absolute
+		height: 1px
+		width: 1180px
+		background: rgba(255, 255, 255, .5)
+		top: 50%
+		left: 0
+		right: 0
+		margin: auto
+	// &:before
+	// 	position: absolute
+	// 	content: ''
+	// 	height: 1px
+	// 	width: 1180px
+	// 	background: rgba(255, 255, 255, .5)
+	// 	top: 50%
+	// 	left: 0
+	// 	right: 0
+	// 	margin: auto
 // POPUP
 
 
@@ -99,7 +129,7 @@ body
 	font-weight: bold
 	background: #000
 .header
-	position: fixed
+	position: absolute
 	top: 0
 	z-index: 999
 	width: 100%
@@ -164,80 +194,29 @@ body
 				color: #f42c37
 .slider
 	position: relative
-	width: 1180px
-	height: 570px
+	max-width: 1180px
+	height: 600px
 	color: #fff
-	background: rgba(0, 0, 0, .7)
 	text-align: left
 	li
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		height: 450px
-		padding: 40px 145px
-		box-sizing: border-box
-		line-height: 1.33333
-		z-index: 1
-		opacity: 0
-		transition-duration: .7s
-		&.active
-			opacity: 1
+		line-height: 1.2
 	h4
 		font-size: 36px
 		text-transform: uppercase
 	p
-		margin-top: 50px
+		margin-top: 40px
 		font-size: 24px
 		font-weight: 300
-	&-arrows
-		position: absolute
-		width: 100%
-		top: calc(50% - 45px)
-		span
-			position: relative
-			z-index: 1
-			display: block
-			margin: 0 24px
-			width: 90px
-			height: 90px
-			border-radius: 50%
-			background-color: #ff000b
-			background-position: center
-			background-repeat: no-repeat
-			transition: background-color .5s ease
-			cursor: pointer
-			&:hover
-				background-color: #f22831
-			&.arrow-left
-				float: left
-				background-image: url('../img/icons/arrow-left.png')
-			&.arrow-right
-				float: right
-				background-image: url('../img/icons/arrow-right.png')
+	.cd-radial-slider-navigation li
+		top: 49%
+	.cd-radial-slider-content .wrapper > div
+		text-align: left
 
 section
 	padding-top: 1px
 	margin-top: -1px
-	&.blur
-		text-align: center
-		h2
-			position: relative
-			font-family: 'IntroBlack', arial, sans-serif
-			font-size: 100px
-			color: #fff
-			text-align: center
-			text-transform: uppercase
-			&:before
-				position: absolute
-				content: ''
-				height: 1px
-				width: 1180px
-				background: rgba(255, 255, 255, .5)
-				top: 50%
-				left: 0
-				right: 0
-				margin: auto
+	position: relative
+	overflow: hidden
 .first
 	margin-top: 100px
 	text-align: center
@@ -298,6 +277,8 @@ section
 		background: url('../img/bg-3-bot.png') no-repeat center
 		background-size: cover
 		height: 271px
+	p
+		color: #fff
 .fourth
 	height: 625px
 	background: url('../img/bg-4.jpg') no-repeat center fixed
@@ -317,6 +298,61 @@ section
 			left: 5px
 		&:after
 			right: 5px
+	.clock
+		margin: 13px
+		height: 196px
+		width: 196px
+		background: url('../img/icons/clock.png') no-repeat center
+		&:hover
+			.minutes
+				transform: rotateZ(720deg)
+			.hours
+				transform: rotateZ(360deg)
+	.minutes-container, .hours-container
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+	.round
+		position: absolute
+		margin: auto
+		left: 0
+		right: 0
+		top: 89px
+		width: 18px
+		height: 18px
+		border: 6px solid #ff000b
+		border-radius: 50%
+		@keyframes rotate
+			100%
+				transform: rotateZ(360deg)
+	.minutes
+		position: absolute
+		//height: 6px
+		//width: 42px
+		background: #ff000b
+		border-radius: 6px
+		height: 21.5%
+		left: 49%
+		top: 25%
+		transform-origin: 50% calc(100% + 7px)
+		width: 2%
+		transition-duration: 3s
+		//animation: rotate 60s infinite linear
+	.hours
+		position: absolute
+		//height: 6px
+		//width: 37px
+		background: #ff000b
+		border-radius: 6px
+		height: 19%
+		left: 48.75%
+		top: 28%
+		transform-origin: 50% calc(100% + 7px)
+		width: 2.5%
+		transition-duration: 3s
+		//animation: rotate 3600s infinite linear
 
 	li
 		position: relative
@@ -340,8 +376,6 @@ section
 			margin-right: 0
 			&:after
 				display: none
-		&:first-child
-			background: url('../img/icons/clock.png') no-repeat 13px center
 		> *
 			position: absolute
 		.subheader
@@ -371,10 +405,14 @@ section
 	background-size: cover
 	h2
 		margin-top: 90px
+		& + i
+			top: 145px
 .eigth
 	height: 1120px
 	h2
 		margin-top: 110px
+		& + i
+			top: 163px
 
 .ninth
 	background: url('../img/bg-9.jpg') center
@@ -510,9 +548,33 @@ section
 	background-size: cover
 .sixteenth
 	padding-bottom: 1px
+	&:before
+		top: 0px
+		background: url('../img/bg-14-top.png') no-repeat center
+		background-size: cover
+		height: 165px
+	&:after
+		bottom: 15px
+		background: url('../img/bg-14-top.png') no-repeat center
+		background-size: cover
+		height: 165px
 	.wrapper
+		display: inline-block
 		margin: 75px auto 105px
 		text-align: left
+		position: relative
+		z-index: 1
+		&:before, &:after
+			position: absolute
+			top: -60px
+			content: ''
+			width: 198px
+			height: 122px
+			background: url('../img/icons/lamp.png')
+		&:before
+			left: 62px
+		&:after
+			left: 275px
 	p
 		line-height: 1.5
 		font-size: 24px
@@ -520,14 +582,12 @@ section
 	img
 		display: block
 		margin: 30px auto 72px
-	.left-part, .right-part
-		
 	.left-part
 		float: left
 		width: 43%
 	.right-part
 		float: right
-		width: 50%
+		width: 53%
 		p
 			margin-top: 50px
 	.subheader
@@ -542,3 +602,82 @@ section
 	height: 800px
 	background: url('../img/bg-17.jpg') center
 	background-size: cover
+	form
+		max-width: 1200px
+		position: relative
+		height: 580px
+		margin-top: 90px
+		background: rgba(0, 0, 0, .7)
+		padding: 40px 30px
+		box-sizing: border-box
+		*
+			box-sizing: border-box
+		h2
+			margin-bottom: 28px
+			&:before
+				display: none
+		input, textarea, .placeholder
+			font-size: 24px
+			font-style: italic
+			font-weight: 300
+			color: #fff
+			background: none
+			border: none
+		input, textarea
+			position: relative
+			z-index: 1
+			border-bottom: 1px solid #ff000b
+			transition-duration: .3s
+			&:focus
+				box-shadow: 0 0 4px 3px #ff000b
+				border: none
+				& + .placeholder
+					display: none
+		input
+			width: 560px
+			height: 40px
+			padding: 0 30px
+			&[type="email"]
+				float: right
+		textarea
+			width: 100%
+			height: 180px
+			padding: 10px 35px
+			margin-top: 30px
+		.placeholder
+			position: absolute
+			i
+				color: #ff000b
+		[type="text"]+.placeholder
+			left: 70px
+			top: 171px
+		[type="email"]+.placeholder
+			right: 260px
+			top: 171px
+		textarea+.placeholder
+			left: 70px
+			top: 250px
+		.button
+			float: right
+			margin-top: 50px
+			border-color: #fff
+			&:hover
+				border-color: #ff000b
+footer
+	height: 90px
+	line-height: 90px
+	font-size: 14px
+	color: #6c6f73
+	text-transform: uppercase
+	font-weight: 300
+	background: #fff
+	.smarto
+		float: right
+	.logo-smart
+		position: relative
+		top: 18px
+		display: inline-block
+		margin-left: 30px
+		width: 95px
+		height: 49px
+		background: url('../img/logo-smart.png')

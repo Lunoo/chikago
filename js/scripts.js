@@ -15,5 +15,20 @@ $(function(){
         if($active.prev().length == 0){
             $slider.find('li:last-child').toggleClass('active');
         }
-    }) 
+    })
+    $('.form input, .form textarea').blur(function(){
+        if($(this).val()){
+            $(this).next().hide();
+        } else {
+            $(this).next().show();
+        }
+    })
+    // var controller = new ScrollMagic.Controller();
+    // // build scene
+    // var scene = new ScrollMagic.Scene({
+    //     triggerElement: ".slider"
+    // })
+    // .setTween("header", 0.5, {backgroundColor: "green", scale: 2.5}) // trigger a TweenMax.to tween
+    // .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+    // .addTo(controller);
 })

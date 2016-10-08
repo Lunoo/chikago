@@ -7,12 +7,21 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/set1.css" />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slider-style.css"> <!-- Resource style -->
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="js/lib/greensock/TweenMax.min.js"></script>
+    <script src="js/lib/scrollmagic/ScrollMagic.min.js"></script>
+    <script src="js/lib/plugins/debug.addIndicators.min.js"></script>
 </head>
 <body>
+    <script>
+        var controller = new ScrollMagic.Controller();
+    </script>
 	<header class="header">
 		<div class="wrapper">
 			<a href="" class="logo">
@@ -33,73 +42,186 @@
 		</div>
 	</header>
 	<section class="first">
-		<h2>
+		<h2 class="wow bounceInLeft">
 			Зустрічайте новий житловий комплекс
 			<em>від творців “NEW YORK concept house”!</em>
 		</h2>
-		<span class="subheader">Американська якість.</span><br>
-		<span class="subheader">Українська ціна.</span>
-		<div class="slider">
-			<ul>
-				<li class="active 1">
-					<h4>
-						Місія розробників “CHICAGO central house” – запропонувати киянам американську якість життя за розумною ціною.
-					</h4>
-					<p>
-						Це стало можливим завдяки застосуванню американського досвіду проектування та будівництва, яким володіють ідеологи проекту, що довгий час проживали у США, а тепер повернулись на історичну Батьківщину – в Україну.
-					</p>
-					<p>
-						CHICAGO central house” – це амбіційний концепт, який поєднує в собі яскраву чиказьку архітектуру, комфорт світового рівня та всі переваги життя у центрі столиці. Це дійсно унікальний простір для життя, призначений для тих, хто прагне особливого. Для тих, хто хоче завжди перебувати у центрі – у центрі міста, у центрі ділового та культурного життя.
-					</p>
-				</li>
-				<li class="2">
-					<h4>
-						Місія розробників “CHICAGO central house” – запропонувати киянам американську якість життя.
-					</h4>
-					<p>
-						CHICAGO central house” – це амбіційний концепт, який поєднує в собі яскраву чиказьку архітектуру, комфорт світового рівня та всі переваги життя у центрі столиці. Це дійсно унікальний простір для життя, призначений для тих, хто прагне особливого. Для тих, хто хоче завжди перебувати у центрі – у центрі міста, у центрі ділового та культурного життя.
-					</p>
-				</li>
-				<li class="3">
-					<h4>
-						Місія розробників “CHICAGO central house” – запропонувати киянам.
-					</h4>
-					<p>
-						Це стало можливим завдяки застосуванню американського досвіду проектування та будівництва, яким володіють ідеологи проекту, що довгий час проживали у США, а тепер повернулись на історичну Батьківщину – в Україну.
-					</p>
-					<p>
-						CHICAGO central house” – це амбіційний концепт, який поєднує в собі яскраву чиказьку архітектуру, комфорт світового рівня та всі переваги життя у центрі столиці. Для тих, хто хоче завжди перебувати у центрі – у центрі міста, у центрі ділового та культурного життя.
-					</p>
-				</li>
-			</ul>
-			<div class="slider-arrows">
-				<span class="arrow-left"></span>
-				<span class="arrow-right"></span>
-			</div>
-		</div>
+		<span class="subheader wow bounceInRight">Американська якість.</span><br>
+		<span class="subheader wow bounceInRight">Українська ціна.</span>
+        <div class="cd-radial-slider-wrapper slider">
+            <ul class="cd-radial-slider" data-radius1="60" data-radius2="1364" data-centerx1="110" data-centerx2="1290">
+                <li class="visible">
+                    <div class="svg-wrapper">
+                        <svg viewBox="0 0 1400 800">
+                            <title>Animated SVG</title>
+                            <defs>
+                                <clipPath id="cd-image-1">
+                                    <circle id="cd-circle-1" cx="110" cy="400" r="1364"/>
+                                </clipPath>
+                            </defs>
+
+                            <image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="img/bg-slider-1.png"></image>
+                        </svg>
+                    </div> <!-- .svg-wrapper -->
+
+                    <div class="cd-radial-slider-content">
+                        <div class="wrapper">
+                            <div>
+                                <h4>
+                                    Місія розробників “CHICAGO central house” – запропонувати киянам американську якість життя за розумною ціною.
+                                </h4>
+                                <p>
+                                    Це стало можливим завдяки застосуванню американського досвіду проектування та будівництва, яким володіють ідеологи проекту, що довгий час проживали у США, а тепер повернулись на історичну Батьківщину – в Україну.
+                                </p>
+                                <p>
+                                    CHICAGO central house” – це амбіційний концепт, який поєднує в собі яскраву чиказьку архітектуру, комфорт світового рівня та всі переваги життя у центрі столиці. Це дійсно унікальний простір для життя, призначений для тих, хто прагне особливого. Для тих, хто хоче завжди перебувати у центрі – у центрі міста, у центрі ділового та культурного життя.
+                                </p>
+                            </div>
+                        </div>
+                    </div> <!-- .cd-radial-slider-content -->
+                </li>
+
+                <li class="next-slide">
+                    <div class="svg-wrapper">
+                        <svg viewBox="0 0 1400 800">
+                            <title>Animated SVG</title>
+                            <defs>
+                                <clipPath id="cd-image-2">
+                                    <circle id="cd-circle-2" cx="1290" cy="400" r="60"/>
+                                </clipPath>
+                            </defs>
+
+                            <image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="img/bg-slider-2.png"></image>
+                        </svg>
+                    </div> <!-- .svg-wrapper -->
+
+                    <div class="cd-radial-slider-content">
+                        <div class="wrapper">
+                            <div>
+                                 <h4>
+                                    Місія розробників “CHICAGO central house” – запропонувати киянам американську якість життя за розумною ціною.
+                                </h4>
+                                <p>
+                                    CHICAGO central house” – це амбіційний концепт, який поєднує в собі яскраву чиказьку архітектуру, комфорт світового рівня та всі переваги життя у центрі столиці. Це дійсно унікальний простір для життя, призначений для тих, хто прагне особливого. Для тих, хто хоче завжди перебувати у центрі – у центрі міста, у центрі ділового та культурного життя.
+                                </p>
+                            </div>
+                        </div>
+                    </div> <!-- .cd-radial-slider-content -->
+                </li>
+
+                <li>
+                    <div class="svg-wrapper">
+                        <svg viewBox="0 0 1400 800">
+                            <title>Animated SVG</title>
+                            <defs>
+                                <clipPath id="cd-image-3">
+                                    <circle id="cd-circle-3" cx="110" cy="400" r="60"/>
+                                </clipPath>
+                            </defs>
+
+                            <image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="img/bg-slider-1.png"></image>
+                        </svg>
+                    </div> <!-- .svg-wrapper -->
+
+                    <div class="cd-radial-slider-content">
+                        <div class="wrapper">
+                            <div>
+                                 <h4>
+                                    Місія розробників “CHICAGO central house” – запропонувати киянам за розумною ціною.
+                                </h4>
+                                <p>
+                                    Це стало можливим завдяки застосуванню американського досвіду проектування та будівництва, яким володіють ідеологи проекту, що довгий час проживали у США, а тепер повернулись на історичну Батьківщину – в Україну.
+                                </p>
+                                <p>
+                                    CHICAGO central house” – це амбіційний концепт, який поєднує в собі яскраву чиказьку архітектуру, комфорт світового рівня та всі переваги життя у центрі столиці. Це дійсно унікальний простір для життя, призначений для тих, хто прагне особливого.
+                                </p>
+                            </div>
+                        </div>
+                    </div> <!-- .cd-radial-slider-content -->
+                </li>
+
+                <li class="prev-slide">
+                    <div class="svg-wrapper">
+                        <svg viewBox="0 0 1400 800">
+                            <title>Animated SVG</title>
+                            <defs>
+                                <clipPath id="cd-image-4">
+                                    <circle id="cd-circle-4" cx="110" cy="400" r="60"/>
+                                </clipPath>
+                            </defs>
+
+                            <image height='800px' width="1400px" clip-path="url(#cd-image-4)" xlink:href="img/bg-slider-2.png"></image>
+                        </svg>
+                    </div> <!-- .svg-wrapper -->
+
+                    <div class="cd-radial-slider-content">
+                        <div class="wrapper">
+                            <div>
+                                 <h4>
+                                    Місія американську якість життя за розумною ціною.
+                                </h4>
+                                <p>
+                                    Це стало можливим завдяки застосуванню американського досвіду проектування та будівництва, яким володіють ідеологи проекту, що довгий час проживали у США, а тепер повернулись на історичну Батьківщину – в Україну.
+                                </p>
+                            </div>
+                        </div>
+                    </div> <!-- .cd-radial-slider-content -->
+                </li>
+            </ul> <!-- .cd-radial-slider -->
+
+            <ul class="cd-radial-slider-navigation">
+                <li><a href="#0" class="next">Next</a></li>
+                <li><a href="#0" class="prev">Prev</a></li>
+            </ul> <!-- .cd-radial-slider-navigation -->
+
+            <div class="cd-round-mask">
+                <svg viewBox="0 0 1400 800">
+                    <defs>
+                        <mask id="cd-left-mask" height='800px' width="1400px" x="0" y="0" maskUnits="userSpaceOnUse">
+                            <path fill="white" d="M0,0v800h1400V0H0z M110,460c-33.137,0-60-26.863-60-60s26.863-60,60-60s60,26.863,60,60S143.137,460,110,460z"/>
+                        </mask>
+
+                        <mask id="cd-right-mask" height='800px' width="1400px" x="0" y="0" maskUnits="userSpaceOnUse">
+                            <path fill="white" d="M0,0v800h1400V0H0z M1290,460c-33.137,0-60-26.863-60-60s26.863-60,60-60s60,26.863,60,60S1323.137,460,1290,460z"/>
+                        </mask>
+                    </defs>
+                </svg>
+            </div>
+        </div> <!-- .cd-radial-slider-wrapper -->
 	</section>
-	<section class="second blur">
-		<h2>Розташування</h2>
+	<section class="second">
+		<h2 class="title wow slideInLeft">Розташування</h2>
+        <i class="wow slideInRight"></i>
 	</section>
 	<section class="third light">
 		<div class="wrapper">
-			<h2 class="subheader">
-				“CHICAGO central house” розташований у самому 
+			<h2 class="subheader wow fadeInDown">
+				“CHICAGO central house” розташований у самому
 			</h2>
-			<h2 class="subheader">
+			<h2 class="subheader wow fadeInDown">
 				центрі Києва, за адресою: вулиця Антоновича, 44
 			</h2>
-			<h2 class="subheader">
-				(на розі з вулицею Жилянською). 
+			<h2 class="subheader wow fadeInDown">
+				(на розі з вулицею Жилянською).
 			</h2>
-			<p class="more">
+			<p class="more wow fadeInUp">
 				Це той самий щасливий випадок, коли життя у історичному центрі столиці поєднується із енергетикою ділових кварталів. Тепер не треба витрачати час, щоб дістатися до роботи, якщо ваш офіс розташований у київському сіті. Також за декілька хвилин пішки ви дістанетесь до головної вулиці міста, а усе, що потрібно для комфортного насиченого життя, знаходиться поряд із вашим будинком.
 			</p>
 		</div>
 	</section>
 	<section class="fourth">
-		<ul class="wrapper">
-			<li></li>
+		<ul class="wrapper wow flipInY">
+			<li>
+                <div class="clock">
+                    <span class="round"></span>
+                    <div class="hours-container">
+                        <div class="hours"></div>
+                    </div>
+                    <div class="minutes-container">
+                        <div class="minutes"></div>
+                    </div>
+                </div>
+            </li>
 			<li>
 				1
 				<span class="subheader">хвилина</span>
@@ -153,44 +275,47 @@
 	</section>
 	<section class="fifth light">
 		<div class="wrapper">
-			<h2 class="subheader">
+			<h2 class="subheader wow fadeInDown">
 				Щоб дістатися найближчих кафе та ресторанів,
 			</h2>
-			<h2 class="subheader">
+			<h2 class="subheader wow fadeInDown">
 				вам навіть непотрібно залишати будинок,
 			</h2>
-			<p class="more">
-				адже декілька закладів будуть розташовані на перших поверхах “CHICAGO central house”. А ще ми подбали про те, щоб ви могли насолоджуватися велосипедними прогулянками центром міста – у будинку передбачена вело-паркінг та пункт прокату велосипедів. 
+			<p class="more wow fadeInUp">
+				адже декілька закладів будуть розташовані на перших поверхах “CHICAGO central house”. А ще ми подбали про те, щоб ви могли насолоджуватися велосипедними прогулянками центром міста – у будинку передбачена вело-паркінг та пункт прокату велосипедів.
 				До найближчого парку із велосипедними доріжками ви дістанетесь на двох колесах за хвилину.
 			</p>
 		</div>
 	</section>
 	<section class="sixth"></section>
-	<section class="seventh blur">
-		<h2>Панорама</h2>
+	<section class="seventh">
+        <h2 class="title wow slideInLeft">Панорама</h2>
+        <i class="wow slideInRight"></i>
 	</section>
-	<section class="eigth blur">
-		<h2>Галерея</h2>
+	<section class="eigth">
+        <h2 class="title wow slideInLeft">Галерея</h2>
+        <i class="wow slideInRight"></i>
 		<button class="button button-red">Більше фото</button>
 	</section>
-	<section class="ninth blur">
-		<h2>Переваги</h2>
+	<section class="ninth">
+        <h2 class="title wow slideInLeft">Переваги</h2>
+        <i class="wow slideInRight"></i>
 	</section>
 	<section class="tenth">
 		<ul class="wrapper clearfix">
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-1.png" alt="advantage-1">
 				<span class="subheader">Американський </span>
 				<span class="subheader">рівень життя, </span>
 				<span class="last">доступний тепер в Україні</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-2.png" alt="advantage-2">
 				<span class="subheader">Якісне </span>
 				<span class="subheader">будівництво </span>
 				<span class="last">від надійного забудовника</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-3.png" alt="advantage-3">
 				<span class="subheader">Дружні та </span>
 				<span class="subheader">кваліфіковані</span>
@@ -198,55 +323,55 @@
 					спеціалісти з продажу
 				</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-4.png" alt="advantage-4">
 				<span class="subheader">Центральне </span>
 				<span class="subheader">розташування – </span>
 				<span class="last">у пішій доступності від сіті та від старого міста</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-5.png" alt="advantage-5">
 				<span class="subheader">Насичена міська </span>
 				<span class="subheader">інфраструктура: </span>
 				<span class="last">магазини, кафе, ресторани, сервісні центри</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-6.png" alt="advantage-6">
 				<span class="subheader">Вільне</span>
 				<span class="subheader">планування</span>
 				<span class="last">квартир, а також послуги кваліфікованих архітекторів</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-7.png" alt="advantage-7">
 				<span class="subheader">Унікальна</span>
 				<span class="subheader">архітектура</span>
 				<span class="last">будинку, що виконана у яскравому чиказькому стилі</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-8.png" alt="advantage-8">
 				<span class="subheader" style="margin-right: -18px">Шедеври сучасного</span>
 				<span class="subheader">мистецтва</span>
 				<span class="last">у громадському просторі будинку</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-9.png" alt="advantage-9">
 				<span class="subheader">Гармонійна</span>
 				<span class="subheader">естетика</span>
 				<span class="last">прибудинкових територій</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-10.png" alt="advantage-10">
 				<span class="subheader">Розкішна</span>
 				<span class="subheader">панорама</span>
 				<span class="last">історичного центру Києва</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-11.png" alt="advantage-11">
 				<span class="subheader">“CHICAGO </span>
 				<span class="subheader">central house”  – </span>
 				<span class="last">новий архітектурний символ столиці</span>
 			</li>
-			<li>
+			<li class="wow bounceIn">
 				<img src="img/icons/advantage-12.png" alt="advantage-12">
 				<span class="subheader">Професійний </span>
 				<span class="subheader">консьєрж-сервіс </span>
@@ -254,105 +379,135 @@
 			</li>
 		</ul>
 	</section>
-	<section class="eleventh blur">
-		<h2>Цінності</h2>
+	<section class="eleventh">
+        <h2 class="title wow slideInLeft">Цінності</h2>
+        <i class="wow slideInRight"></i>
 	</section>
 	<section class="twelfth light">
 		<div class="grid clearfix">
-			<figure class="effect-milo">
+			<figure class="effect-milo wow fadeInLeft">
 				<img src="img/gal-1.jpg" alt="img01"/>
 				<figcaption>
 					<h2>Art</h2>
 					<p>життя як мистецтво, <em>будинок як шедевр</em></p>
 					<a href="#">View more</a>
-				</figcaption>			
+				</figcaption>
 			</figure>
-			<figure class="effect-milo">
+			<figure class="effect-milo wow fadeInRight">
 				<img src="img/gal-2.jpg" alt="img02"/>
 				<figcaption>
 					<h2>Bright</h2>
 					<p>життя як мистецтво, <em>будинок як шедевр</em></p>
 					<a href="#">View more</a>
-				</figcaption>			
+				</figcaption>
 			</figure>
-			<figure class="effect-milo">
+			<figure class="effect-milo wow fadeInLeft">
 				<img src="img/gal-3.jpg" alt="img03"/>
 				<figcaption>
 					<h2>Central</h2>
 					<p>життя як мистецтво, <em>будинок як шедевр</em></p>
 					<a href="#">View more</a>
-				</figcaption>			
+				</figcaption>
 			</figure>
-			<figure class="effect-milo">
+			<figure class="effect-milo wow fadeInRight">
 				<img src="img/gal-4.jpg" alt="img04"/>
 				<figcaption>
 					<h2>Different</h2>
 					<p>життя як мистецтво, <em>будинок як шедевр</em></p>
 					<a href="#">View more</a>
-				</figcaption>			
+				</figcaption>
 			</figure>
 		</div>
 	</section>
-	<section class="thirteenth blur">
-		<h2>Квартири</h2>
+	<section class="thirteenth">
+        <h2 class="title wow slideInLeft">Квартири</h2>
+        <i class="wow slideInRight"></i>
 	</section>
 	<section class="fourteenth light">
 		<div class="wrapper">
-			<div class="text">
+			<div class="text wow fadeInLeft">
 				<h2 class="subheader">Оберіть свою квартиру</h2>
 				<h2 class="subheader">у “CHICAGO central house” </h2>
 				<h2 class="subheader">просто зараз!</h2>
 				<p>
-					Ми пропонуємо вільне планування житлового простору – саме ви вирішуєте, як буде влаштована ваша квартира.  В в цьому допоможуть досвідчені архітектори, яких ми вам надамо, щоб забезпечити втілення усіх ваших бажань. 
+					Ми пропонуємо вільне планування житлового простору – саме ви вирішуєте, як буде влаштована ваша квартира.  В в цьому допоможуть досвідчені архітектори, яких ми вам надамо, щоб забезпечити втілення усіх ваших бажань.
 				</p>
 				<p>
-					Наше кредо – уважне ставлення до деталей. Ми приділяємо максимальну увагу опрацюванню  ергономіки проектних рішень, підбору високоякісних матеріалів, конструктивним рішенням тощо. 
+					Наше кредо – уважне ставлення до деталей. Ми приділяємо максимальну увагу опрацюванню  ергономіки проектних рішень, підбору високоякісних матеріалів, конструктивним рішенням тощо.
 				</p>
 				<p>
-					Ваша участь у проекті – найкраща нагорода для нас. Отже давайте працювати разом –  звертайтеся до наших спеціалістів з будь-яких питань, пов’язаних із вашим майбутнім житлом. 
+					Ваша участь у проекті – найкраща нагорода для нас. Отже давайте працювати разом –  звертайтеся до наших спеціалістів з будь-яких питань, пов’язаних із вашим майбутнім житлом.
 				</p>
 				<button class="button button-red">Обрати квартиру</button>
 				<span>Щоб отримати додаткову інформацію, будь ласка, зв'яжіться із нами</span>
 			</div>
-			<img src="img/central.jpg" alt="central" class="img-first">
-			<img src="img/gallery.jpg" alt="gallery" class="img-second">
+			<img src="img/central.jpg" alt="central" class="img-first wow fadeInRight">
+			<img src="img/gallery.jpg" alt="gallery" class="img-second wow fadeInRight">
 		</div>
 	</section>
-	<section class="fifteenth blur">
-		<h2>Забудовник</h2>
+	<section class="fifteenth">
+        <h2 class="title wow slideInLeft">Забудовник</h2>
+        <i class="wow slideInRight"></i>
 	</section>
-	<section class="sixteenth">
-		<div class="wrapper clearfix">
-			<div class="left-part">
+	<section class="sixteenth light">
+		<div class="wrapper">
+			<div class="left-part wow fadeInLeft">
 				<img src="img/icons/logo-kiev.png" alt="logo-kiev">
 				<p>
-					Проект реалізується у партнерстві з групою компаній 
+					Проект реалізується у партнерстві з групою компаній
 					"ХК "Київміськбуд" – надійним забудовником з відмінною репутацією, що має 60-річний досвід.
 				</p>
 			</div>
-			<div class="right-part">
+			<div class="right-part wow fadeInRight">
 				<span class="subheader">Забудовником ЖК “CHICAGO</span>
 				<span class="subheader">central house” виступає</span>
 				<span class="subheader">компанія «КДД Інжиніринг»,</span>
 				<span class="subheader">замовник об’єкту – </span>
 				<span class="subheader">ТОВ «Антоновича-44»</span>
 				<p>
-					Будівництво ЖК “CHICAGO central house” здійснюється з отриманням усіх норм та вимог чинного законодавства України у галузі будівництва та на підставі всієї необхідної 
+					Будівництво ЖК “CHICAGO central house” здійснюється з отриманням усіх норм та вимог чинного законодавства України у галузі будівництва та на підставі всієї необхідної
 				</p>
 			</div>
 			<button class="button button-red">Хід будівництва</button>
 		</div>
 	</section>
-	<section class="seventeenth"></section>
+	<section class="seventeenth">
+        <form action="#" class="wrapper form wow bounceInDown">
+            <h2 class="title">Зворотній звязок</h2>
+            <input type="text" required>
+            <span class="placeholder">Ім'я:<i>*</i></span>
+            <input type="email" required>
+            <span class="placeholder">Телефон / електронна пошта:<i>*</i></span>
+            <textarea cols="30" rows="10" required></textarea>
+            <span class="placeholder">Текст повідомлення:<i>*</i></span>
+            <button class="button button-red">Надіслати</button>
+        </form>
+    </section>
 	<footer>
+        <div class="wrapper">
+            <span class="copy">Copyright 2016</span>
+            <span class="smarto">
+                Розробка сайту
+                <a href="#" class="logo-smart"></a>
+            </span>
+        </div>
 	</footer>
-	<script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/lib/snap.svg-min.js"></script>
+    <script src="js/lib/main.js"></script> <!-- Resource jQuery -->
+    <script src="js/lib/wow.min.js"></script>
 	<script src="js/scripts.js"></script>
 	<script>
 		// For Demo purposes only (show hover effect on mobile devices)
 		[].slice.call( document.querySelectorAll('a[href="#"') ).forEach( function(el) {
 			el.addEventListener( 'click', function(ev) { ev.preventDefault(); } );
 		} );
+        new WOW().init();
+        // build scene
+        var scene = new ScrollMagic.Scene({triggerElement: ".header", duration: 300})
+        // animate color and top border in relation to scroll position
+        .setTween(".slider", {borderTop: "30px solid white", backgroundColor: "blue", scale: 0.7}) // the tween durtion can be omitted and defaults to 1
+        .addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)
+        .addTo(controller);
 	</script>
 </body>
 </html>
