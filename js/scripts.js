@@ -1,27 +1,29 @@
 $(function(){
-    // SLIDER
-    $('.slider .arrow-right').click(function(){
-        $slider = $(this).parents('.slider');
-        $active = $slider.find('.active');
-        $active.toggleClass('active').next().toggleClass('active');
-        if($active.next().length == 0){
-            $slider.find('li:first-child').toggleClass('active');
+    $('.gallery a').fancybox({
+        wrapCss: 'gal',
+        helpers : {
+            thumbs  : {
+                width   : 50,
+                height  : 50
+            }
         }
-    })
-    $('.slider .arrow-left').click(function(){
-        $slider = $(this).parents('.slider');
-        $active = $slider.find('.active');
-        $active.toggleClass('active').prev().toggleClass('active');
-        if($active.prev().length == 0){
-            $slider.find('li:last-child').toggleClass('active');
-        }
-    })
+    });
+    $('.header-callback .callback').fancybox({
+        wrapCss: 'call-form'
+    });
     $('.form input, .form textarea').blur(function(){
         if($(this).val()){
             $(this).next().hide();
         } else {
             $(this).next().show();
         }
+    })
+    $('.header-nav a').click(function(e){
+        e.preventDefault();
+        var $href = $(this).attr('href');
+        $top = $($href).offset().top;
+        $('body,html').animate({scrollTop: $top}, 1000);
+        //window.location = $href;
     })
     // var controller = new ScrollMagic.Controller();
     // // build scene

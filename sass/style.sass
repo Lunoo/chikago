@@ -88,19 +88,13 @@ h2.title
 		left: 0
 		right: 0
 		margin: auto
-	// &:before
-	// 	position: absolute
-	// 	content: ''
-	// 	height: 1px
-	// 	width: 1180px
-	// 	background: rgba(255, 255, 255, .5)
-	// 	top: 50%
-	// 	left: 0
-	// 	right: 0
-	// 	margin: auto
 // POPUP
-
-
+#callback
+	display: none
+.fancybox-type-inline
+	.fancybox-skin
+		background: none
+		box-shadow: none
 
 // BUTTONS
 .button
@@ -409,10 +403,72 @@ section
 			top: 145px
 .eigth
 	height: 1120px
+	.lamps
+		position: relative
+		display: block
+		max-width: 1180px
+		margin: 30px auto 0
+		i
+			position: absolute
+			width: 198px
+			height: 122px
+			background: url('../img/icons/lamp.png') no-repeat
+			&:nth-child(1)
+				top: 0
+				left: 0
+			&:nth-child(2)
+				top: 0
+				left: 25%
+			&:nth-child(3)
+				top: 0
+				left: 50%
+			&:nth-child(4)
+				top: 0
+				left: 75%
 	h2
 		margin-top: 110px
 		& + i
 			top: 163px
+	.gallery
+		margin: 50px auto 70px
+		position: relative
+		max-width: 1110px
+		height: 650px
+		a
+			position: absolute
+			&:nth-child(1)
+				top: 0
+				left: 43px
+			&:nth-child(2)
+				top: 0
+				left: 360px
+			&:nth-child(3)
+				top: 0
+				left: 553px
+			&:nth-child(4)
+				top: 166px
+				left: 135px
+			&:nth-child(5)
+				top: 222px
+				left: 360px
+			&:nth-child(6)
+				top: 197px
+				left: 552px
+			&:nth-child(7)
+				top: 386px
+				left: 552px
+			&:nth-child(8)
+				top: 428px
+				left: 0px
+			&:nth-child(9)
+				top: 440px
+				left: 361px
+			&:nth-child(10)
+				top: 464px
+				left: 742px
+			&:nth-child(11)
+				top: 197px
+				left: 742px
 
 .ninth
 	background: url('../img/bg-9.jpg') center
@@ -602,67 +658,67 @@ section
 	height: 800px
 	background: url('../img/bg-17.jpg') center
 	background-size: cover
-	form
-		max-width: 1200px
-		position: relative
-		height: 580px
-		margin-top: 90px
-		background: rgba(0, 0, 0, .7)
-		padding: 40px 30px
+.form
+	max-width: 1200px
+	position: relative
+	height: 580px
+	margin-top: 90px
+	background: rgba(0, 0, 0, .7)
+	padding: 40px 30px
+	box-sizing: border-box
+	*
 		box-sizing: border-box
-		*
-			box-sizing: border-box
-		h2
-			margin-bottom: 28px
-			&:before
-				display: none
-		input, textarea, .placeholder
-			font-size: 24px
-			font-style: italic
-			font-weight: 300
-			color: #fff
-			background: none
+	h2
+		margin-bottom: 28px
+		&:before
+			display: none
+	input, textarea, .placeholder
+		font-size: 24px
+		font-style: italic
+		font-weight: 300
+		color: #fff
+		background: none
+		border: none
+	input, textarea
+		position: relative
+		z-index: 1
+		border-bottom: 1px solid #ff000b
+		transition-duration: .3s
+		&:focus
+			box-shadow: 0 0 4px 3px #ff000b
 			border: none
-		input, textarea
-			position: relative
-			z-index: 1
-			border-bottom: 1px solid #ff000b
-			transition-duration: .3s
-			&:focus
-				box-shadow: 0 0 4px 3px #ff000b
-				border: none
-				& + .placeholder
-					display: none
-		input
-			width: 560px
-			height: 40px
-			padding: 0 30px
-			&[type="email"]
-				float: right
-		textarea
-			width: 100%
-			height: 180px
-			padding: 10px 35px
-			margin-top: 30px
-		.placeholder
-			position: absolute
-			i
-				color: #ff000b
-		[type="text"]+.placeholder
-			left: 70px
-			top: 171px
-		[type="email"]+.placeholder
-			right: 260px
-			top: 171px
-		textarea+.placeholder
-			left: 70px
-			top: 250px
-		.button
+			& + .placeholder
+				display: none
+	input
+		width: 560px
+		height: 40px
+		padding: 0 30px
+		&[type="email"]
 			float: right
-			margin-top: 50px
-			border-color: #fff
-			&:hover
-				border-color: #ff000b
+	textarea
+		width: 100%
+		height: 180px
+		padding: 10px 35px
+		margin-top: 30px
+	.placeholder
+		position: absolute
+		i
+			color: #ff000b
+	[type="text"]+.placeholder
+		left: 70px
+		top: 171px
+	[type="email"]+.placeholder
+		right: 260px
+		top: 171px
+	textarea+.placeholder
+		left: 70px
+		top: 250px
+	.button
+		float: right
+		margin-top: 50px
+		border-color: #fff
+		&:hover
+			border-color: #ff000b
 footer
 	height: 90px
 	line-height: 90px

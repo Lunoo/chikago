@@ -9,6 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="css/set1.css" />
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slider-style.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/jquery.fancybox-thumbs.css">
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -29,15 +31,15 @@
 			</a>
 			<ul class="header-nav">
 				<li><a href="#">Будинок</a></li>
-				<li><a href="#">Розташування</a></li>
-				<li><a href="#">Квартири</a></li>
-				<li><a href="#">Забудовник</a></li>
+				<li><a href="#place">Розташування</a></li>
+				<li><a href="#aparments">Квартири</a></li>
+				<li><a href="#builder">Забудовник</a></li>
 				<li><a href="#">Будівництво</a></li>
-				<li><a href="#">Зв'язок</a></li>
+				<li><a href="#contact">Зв'язок</a></li>
 			</ul>
 			<div class="header-callback">
 				Телефон гарячої лінії <em>(093) 32-45-117</em>
-				<a href="#" class="button callback">зворотній зв`язок</a>
+				<a href="#callback" class="button callback">зворотній зв`язок</a>
 			</div>
 		</div>
 	</header>
@@ -48,7 +50,7 @@
 		</h2>
 		<span class="subheader wow bounceInRight">Американська якість.</span><br>
 		<span class="subheader wow bounceInRight">Українська ціна.</span>
-        <div class="cd-radial-slider-wrapper slider">
+        <div class="cd-radial-slider-wrapper slider wow fadeInDown">
             <ul class="cd-radial-slider" data-radius1="60" data-radius2="1364" data-centerx1="110" data-centerx2="1290">
                 <li class="visible">
                     <div class="svg-wrapper">
@@ -189,7 +191,7 @@
             </div>
         </div> <!-- .cd-radial-slider-wrapper -->
 	</section>
-	<section class="second">
+	<section class="second" id="place">
 		<h2 class="title wow slideInLeft">Розташування</h2>
         <i class="wow slideInRight"></i>
 	</section>
@@ -293,8 +295,49 @@
         <i class="wow slideInRight"></i>
 	</section>
 	<section class="eigth">
+        <span class="lamps wrapper">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </span>
         <h2 class="title wow slideInLeft">Галерея</h2>
         <i class="wow slideInRight"></i>
+        <div class="gallery">
+            <a href="img/gallery/1.jpg" class="wow fadeInLeft" rel="gallery">
+                <img src="img/gallery/1.jpg" alt="img-gallery">
+            </a>
+            <a href="img/gallery/2.jpg" class="wow fadeInDown" rel="gallery">
+                <img src="img/gallery/2.jpg" alt="img-gallery">
+            </a>
+            <a href="img/gallery/3.jpg" class="wow fadeInRight" rel="gallery">
+                <img src="img/gallery/3.jpg" alt="img-gallery">
+            </a>
+            <a href="img/gallery/4.jpg" class="wow fadeInUp" rel="gallery">
+                <img src="img/gallery/4.jpg" alt="img-gallery">
+            </a>
+            <a href="img/gallery/5.jpg" class="wow fadeInRight" rel="gallery">
+                <img src="img/gallery/5.jpg" alt="img-gallery">
+            </a>
+            <a href="img/gallery/6.jpg" class="wow fadeInDown" rel="gallery">
+                <img src="img/gallery/6.jpg" alt="img-gallery">
+            </a>
+            <a href="img/gallery/7.jpg" class="wow fadeInLeft" rel="gallery">
+                <img src="img/gallery/7.jpg" alt="img-gallery">
+            </a>
+            <a href="img/gallery/8.jpg" class="wow fadeInLeft" rel="gallery">
+                <img src="img/gallery/8.jpg" alt="img-gallery">
+            </a>
+            <a href="img/gallery/9.jpg" class="wow fadeInUp" rel="gallery">
+                <img src="img/gallery/9.jpg" alt="img-gallery">
+            </a>
+            <a href="img/gallery/10.jpg" class="wow fadeInRight" rel="gallery">
+                <img src="img/gallery/10.jpg" alt="img-gallery">
+            </a>
+            <a href="img/gallery/11.jpg" class="wow fadeInLeft" rel="gallery">
+                <img src="img/gallery/11.jpg" alt="img-gallery">
+            </a>
+        </div>
 		<button class="button button-red">Більше фото</button>
 	</section>
 	<section class="ninth">
@@ -393,7 +436,7 @@
 					<a href="#">View more</a>
 				</figcaption>
 			</figure>
-			<figure class="effect-milo wow fadeInRight">
+			<figure class="effect-milo wow fadeInDown">
 				<img src="img/gal-2.jpg" alt="img02"/>
 				<figcaption>
 					<h2>Bright</h2>
@@ -401,7 +444,7 @@
 					<a href="#">View more</a>
 				</figcaption>
 			</figure>
-			<figure class="effect-milo wow fadeInLeft">
+			<figure class="effect-milo wow fadeInUp">
 				<img src="img/gal-3.jpg" alt="img03"/>
 				<figcaption>
 					<h2>Central</h2>
@@ -419,7 +462,7 @@
 			</figure>
 		</div>
 	</section>
-	<section class="thirteenth">
+	<section class="thirteenth" id="aparments">
         <h2 class="title wow slideInLeft">Квартири</h2>
         <i class="wow slideInRight"></i>
 	</section>
@@ -445,7 +488,7 @@
 			<img src="img/gallery.jpg" alt="gallery" class="img-second wow fadeInRight">
 		</div>
 	</section>
-	<section class="fifteenth">
+	<section class="fifteenth" id="builder">
         <h2 class="title wow slideInLeft">Забудовник</h2>
         <i class="wow slideInRight"></i>
 	</section>
@@ -471,7 +514,7 @@
 			<button class="button button-red">Хід будівництва</button>
 		</div>
 	</section>
-	<section class="seventeenth">
+	<section class="seventeenth" id="contact">
         <form action="#" class="wrapper form wow bounceInDown">
             <h2 class="title">Зворотній звязок</h2>
             <input type="text" required>
@@ -491,9 +534,21 @@
                 <a href="#" class="logo-smart"></a>
             </span>
         </div>
+        <form action="#" id="callback" class="form">
+            <h2 class="title">Зворотній звязок</h2>
+            <input type="text" required>
+            <span class="placeholder">Ім'я:<i>*</i></span>
+            <input type="email" required>
+            <span class="placeholder">Телефон / електронна пошта:<i>*</i></span>
+            <textarea cols="30" rows="10" required></textarea>
+            <span class="placeholder">Текст повідомлення:<i>*</i></span>
+            <button class="button button-red">Надіслати</button>
+        </form>
 	</footer>
     <script src="js/lib/snap.svg-min.js"></script>
     <script src="js/lib/main.js"></script> <!-- Resource jQuery -->
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.fancybox-thumbs.js"></script>
     <script src="js/lib/wow.min.js"></script>
 	<script src="js/scripts.js"></script>
 	<script>
@@ -503,11 +558,11 @@
 		} );
         new WOW().init();
         // build scene
-        var scene = new ScrollMagic.Scene({triggerElement: ".header", duration: 300})
-        // animate color and top border in relation to scroll position
-        .setTween(".slider", {borderTop: "30px solid white", backgroundColor: "blue", scale: 0.7}) // the tween durtion can be omitted and defaults to 1
-        .addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)
-        .addTo(controller);
+        // var scene = new ScrollMagic.Scene({triggerElement: ".header", duration: 300})
+        // // animate color and top border in relation to scroll position
+        // .setTween(".slider", {borderTop: "30px solid white", backgroundColor: "blue", scale: 0.7}) // the tween durtion can be omitted and defaults to 1
+        // .addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)
+        // .addTo(controller);
 	</script>
 </body>
 </html>
