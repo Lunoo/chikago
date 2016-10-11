@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/set1.css" />
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/slider-style.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="css/slider-style.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
     <link rel="stylesheet" href="css/jquery.fancybox-thumbs.css">
 	<!--[if IE]>
@@ -18,7 +18,758 @@
     <script src="js/jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="js/lib/greensock/TweenMax.min.js"></script>
     <script src="js/lib/scrollmagic/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="js/lib/scrollmagic/plugins/animation.gsap.js"></script>
     <script src="js/lib/plugins/debug.addIndicators.min.js"></script>
+
+    <!-- MAPS -->
+
+    <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map {
+                width: 100%;
+                height: 650px;
+            }
+            #contentt  {
+              background: black;
+            }
+            #contentt h3 {
+              
+              color: white;
+              text-align: center;
+            }
+            #contentt h2{
+              color: white;
+              text-align: center;
+            }
+            #contentt img{
+              padding:  5px 5px 0px 5px;
+            }
+            div.gm-style>div>div>div>div>div{
+              background: black;
+            }
+        </style>
+        
+        <!-- 
+            You need to include this script tag on any page that has a Google Map.
+
+            The following script tag will work when opening this example locally on your computer.
+            But if you use this on a localhost server or a live website you will need to include an API key. 
+            Sign up for one here (it's free for small usage): 
+                https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+
+            After you sign up, use the following script tag with YOUR_GOOGLE_API_KEY replaced with your actual key.
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY"></script>
+        -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+        
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 15,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(50.439572, 30.515734), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","elementType":"all","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"transit","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]}]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+              var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+             var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+              /* var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(50.433464, 30.513194),
+                    map: map,
+                    title: 'Snazzy!',
+                   icon: 'target.png'
+                });*/
+/*чикаго*/
+
+ var contentString = '<div id="contentt">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<img  src="http://new.uafm.com.ua/chikago/img/logo.png" alt="альтернативный текст">'+
+      '<hr>'+
+      '<h1 id="firstHeading" class="firstHeading"></h1>'+
+      '<h2>вулиця Антоновича, 44</h2>'+
+      '<h3>(на розі з вулицею Жилянською)</h3>'+
+      '<div>';
+
+  var infowindow = new google.maps.InfoWindow({
+
+    content: contentString
+    
+  });
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(50.433464, 30.513194),
+    map: map,
+    title: 'Chikago',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'S',
+    icon: 'target.png'
+//clickable: false 
+    
+  });
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+
+  });
+
+/*Школа №112*/
+       var contentString2 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Школа №112</h1>'+
+      '<p><b></b>вулиця Велика Васильківська</b>'
+      ;
+
+  var infowindow2 = new google.maps.InfoWindow({
+
+    content: contentString2
+  });
+
+var marker2 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.431071, 30.514989),
+    map: map,
+    title: 'Школа №112',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'S',
+    icon: 'library.png'
+    
+  });
+  marker2.addListener('click', function() {
+    infowindow2.open(map, marker2);
+
+  });
+  /*мед центр*/
+
+  var contentString3 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Медицинский центр</h1>'+
+      '<p><b></b>вулиця Фізкультури, 1</b>'
+      ;
+
+  var infowindow3 = new google.maps.InfoWindow({
+
+    content: contentString3
+  });
+
+var marker3 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.431409, 30.517968),
+    map: map,
+    title: 'Медицинский центр',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'M',
+    icon: 'heart.png'
+    
+  });
+  marker3.addListener('click', function() {
+    infowindow3.open(map, marker3);
+
+  });
+  /*мед центр2*/
+
+  var contentString4 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Медицинский центр</h1>'+
+      '<p><b></b>вулиця Еспланадна, 20</b>'
+      ;
+
+  var infowindow4 = new google.maps.InfoWindow({
+
+    content: contentString4
+  });
+
+var marker4 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.437365, 30.520353),
+    map: map,
+    title: 'Медицинский центр',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'M',
+    icon: 'heart.png'
+    
+  });
+  marker4.addListener('click', function() {
+    infowindow4.open(map, marker4);
+
+  });
+  /*лицей 145*/
+  var contentString5 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Київський природничо-науковий ліцей № 145</h1>'+
+      '<p><b></b>вул. Шота Руставелі, 46</b>'
+      ;
+
+  var infowindow5 = new google.maps.InfoWindow({
+
+    content: contentString5
+  });
+
+var marker5 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.434420, 30.517509),
+    map: map,
+    title: 'Київський природничо-науковий ліцей № 145',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'L',
+    icon: 'library.png'
+    
+  });
+  marker5.addListener('click', function() {
+    infowindow5.open(map, marker5);
+
+  });
+  /*сш 78*/
+  var contentString6 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Школа №78</h1>'+
+      '<p><b></b>вулиця Шота Руставелі, 47</b>'
+      ;
+
+  var infowindow6 = new google.maps.InfoWindow({
+
+    content: contentString6
+  });
+
+var marker6 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.435104, 30.518878),
+    map: map,
+    title: 'Школа №78',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'S',
+    icon: 'library.png'
+    
+  });
+  marker6.addListener('click', function() {
+    infowindow6.open(map, marker6);
+
+  });
+  /*аптека*/
+  var contentString7 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Аптека</h1>'+
+      '<p><b></b>вулиця Антоновича, 47</b>'
+      ;
+
+  var infowindow7 = new google.maps.InfoWindow({
+
+    content: contentString7
+  });
+
+var marker7 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.432204, 30.513893),
+    map: map,
+    title: 'Аптека',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'А',
+    icon: 'heart.png'
+    
+  });
+  marker7.addListener('click', function() {
+    infowindow7.open(map, marker7);
+
+  });
+  /*Фітнес*/
+  var contentString8 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Фітнес-клуб "Гран-Прі"</h1>'+
+      '<p><b></b>вулиця Володимирська, 101</b>'
+      ;
+
+  var infowindow8 = new google.maps.InfoWindow({
+
+    content: contentString8
+  });
+
+var marker8 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.432455, 30.509307),
+    map: map,
+    title: 'Фітнес-клуб "Гран-Прі"',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'F',
+    icon: 'dumbell.png'
+    
+  });
+  marker8.addListener('click', function() {
+    infowindow8.open(map, marker8);
+
+  });
+  /*ДНЗ*/
+  var contentString9 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Днз №129 З Яслами (З 2-Х Років) </h1>'+
+      '<p><b></b>вулиця Володимирська, 89А</b>'
+      ;
+
+  var infowindow9 = new google.maps.InfoWindow({
+
+    content: contentString9
+  });
+
+var marker9 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.435227, 30.510311),
+    map: map,
+    title: 'Днз №129 З Яслами (З 2-Х Років) ',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'D',
+    icon: 'library.png'
+    
+  });
+  marker9.addListener('click', function() {
+    infowindow9.open(map, marker9);
+
+  });
+  /*кон суд*/
+  var contentString10 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Конституційний суд України</h1>'+
+      '<p><b></b>вулиця Жилянська, 14</b>'
+      ;
+
+  var infowindow10 = new google.maps.InfoWindow({
+
+    content: contentString10
+  });
+
+var marker10 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.434428, 30.514355),
+    map: map,
+    title: 'Конституційний суд України',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'K',
+    icon: 'department.png'
+  });
+  marker10.addListener('click', function() {
+    infowindow10.open(map, marker10);
+
+  });
+  /*мед центр*/
+  var contentString11 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Мед. центр Інго</h1>'+
+      '<p><b></b>вулиця Велика Васильківська, 54 Б</b>'
+      ;
+
+  var infowindow11 = new google.maps.InfoWindow({
+
+    content: contentString11
+  });
+
+var marker11 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.434619, 30.514938),
+    map: map,
+    title: 'Мед. Центр Інго',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'M',
+    icon: 'heart.png'
+    
+  });
+  marker11.addListener('click', function() {
+    infowindow11.open(map, marker11);
+
+  });
+  /* лікарня */ 
+  var contentString12 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Медичний відділ Представництва МОМ в Україні</h1>'+
+      '<p><b></b>вулиця Антоновича, 16-В</b>'
+      ;
+
+  var infowindow12 = new google.maps.InfoWindow({
+
+    content: contentString12
+  });
+
+var marker12 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.437462, 30.512832),
+    map: map,
+    title: 'Медичний відділ Представництва МОМ в Україні',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'M',
+    icon: 'heart.png'
+    
+  });
+  marker12.addListener('click', function() {
+    infowindow12.open(map, marker12);
+
+  });
+  /*днз*/
+  var contentString13 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">ДУЗ №61 Первоцвет</h1>'+
+      '<p><b></b>вулиця Володимирська, 76</b>'
+      ;
+
+  var infowindow13 = new google.maps.InfoWindow({
+
+    content: contentString13
+  });
+
+var marker13 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.437188, 30.508384),
+    map: map,
+    title: 'ДУЗ №61 Первоцвет',
+    /*animation: google.maps.Animation.BOUNCE,*/
+    //label: 'D',
+    icon: 'library.png'
+    
+  });
+  marker13.addListener('click', function() {
+    infowindow13.open(map, marker13);
+
+  });
+  /*Шевченка*/
+  var contentString14 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Киевский национальный университет им. Тараса Шевченка</h1>'+
+      '<p><b></b>вулиця Володимирська, 60</b>'
+      ;
+
+  var infowindow14 = new google.maps.InfoWindow({
+
+    content: contentString14
+  });
+
+var marker14 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.441975, 30.510380),
+    map: map,
+    title: 'Киевский национальный университет им. Тараса Шевченка',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'W',
+    icon: 'library.png'
+    
+  });
+  marker14.addListener('click', function() {
+    infowindow14.open(map, marker14);
+
+  });
+  /*пинчук арт центр*/
+  var contentString15 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">PinchukArtCentre</h1>'+
+      '<p><b></b>вул. Велика Васильківська/Басейна, 1/3-2</b>'
+      ;
+
+  var infowindow15 = new google.maps.InfoWindow({
+
+    content: contentString15
+  });
+
+var marker15 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.441902, 30.520968),
+    map: map,
+    title: 'PinchukArtCentre',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'P',
+    icon: 'department.png'
+    
+  });
+  marker15.addListener('click', function() {
+    infowindow15.open(map, marker15);
+
+  });
+  /*бесарабский рынок*/
+  var contentString16 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Бессарабский ринок</h1>'+
+      '<p><b></b>Бессарабська площа, 2</b>'
+      ;
+
+  var infowindow16 = new google.maps.InfoWindow({
+
+    content: contentString16
+  });
+
+var marker16 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.442371, 30.521550),
+    map: map,
+    title: 'Бессарабский ринок',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'B',
+    icon: 'shop.png'
+    
+  });
+  marker16.addListener('click', function() {
+    infowindow16.open(map, marker16);
+
+  });
+  /*национальный академический драматическийтеатр им. Ивана Франко*/
+  var contentString17 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Національний академічний драматичний театр ім. Івана Франко</h1>'+
+      '<p><b></b>Бессарабська площа, 2</b>'
+      ;
+
+  var infowindow17 = new google.maps.InfoWindow({
+
+    content: contentString17
+  });
+
+var marker17 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.445601, 30.528247),
+    map: map,
+    title: 'Національний академічний драматичний театр ім. Івана Франко',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'T',
+    icon: 'department.png'
+    
+  });
+  marker17.addListener('click', function() {
+    infowindow17.open(map, marker17);
+
+  });
+  /* m Univer*/
+
+  var contentString18 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading"></h1>'+
+      '<p><b>(m) Universitet</b>'
+      ;
+
+  var infowindow18 = new google.maps.InfoWindow({
+
+    content: contentString18
+  });
+
+var marker18 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.442966, 30.503661),
+    map: map,
+    title: '(m) Universitet',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'T',
+    icon: 'subway.png'
+    
+  });
+  marker18.addListener('click', function() {
+    infowindow18.open(map, marker18);
+
+  });
+  /*m zoloti vorota 1*/
+  var contentString19 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading"></h1>'+
+      '<p><b>(m) Zolori vorota</b>'
+      ;
+
+  var infowindow19 = new google.maps.InfoWindow({
+
+    content: contentString19
+  });
+
+var marker19 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.448402, 30.513525),
+    map: map,
+    title: '(m) Zolori vorota',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'T',
+    icon: 'subway.png'
+    
+  });
+  marker19.addListener('click', function() {
+    infowindow19.open(map, marker19);
+
+  });
+  /*m zoloti votota 2*/
+var contentString20 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading"></h1>'+
+      '<p><b>(m) Zolori vorota</b>'
+      ;
+
+  var infowindow20 = new google.maps.InfoWindow({
+
+    content: contentString20
+  });
+
+var marker20 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.446126, 30.515450),
+    map: map,
+    title: '(m) Zolori vorota',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'T',
+    icon: 'subway.png'
+    
+  });
+  marker20.addListener('click', function() {
+    infowindow20.open(map, marker20);
+
+  });
+  /*м театральна*/
+  var contentString21 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading"></h1>'+
+      '<p><b>(m) Teatralna </b>'
+      ;
+
+  var infowindow21 = new google.maps.InfoWindow({
+
+    content: contentString21
+  });
+
+var marker21 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.444842, 30.516068),
+    map: map,
+    title: '(m) Teatralna',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'T',
+    icon: 'subway.png'
+    
+  });
+  marker21.addListener('click', function() {
+    infowindow21.open(map, marker21);
+
+  });
+  /*м хрещатик*/
+
+  var contentString22 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading"></h1>'+
+      '<p><b>(m) Hreshatik</b>'
+      ;
+
+  var infowindow22 = new google.maps.InfoWindow({
+
+    content: contentString22
+  });
+
+var marker22 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.447062, 30.525360),
+    map: map,
+    title: '(m) Hreshatik',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'T',
+    icon: 'subway.png'
+    
+  });
+  marker22.addListener('click', function() {
+    infowindow22.open(map, marker22);
+
+  });
+
+  /*м площа Льва Толстого*/
+  var contentString23 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading"></h1>'+
+      '<p><b>(m) pl Lva Tolstogo</b>'
+      ;
+
+  var infowindow23 = new google.maps.InfoWindow({
+
+    content: contentString23
+  });
+
+var marker23 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.440088, 30.518023),
+    map: map,
+    title: '(m) pl Lva Tolstogo',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'T',
+    icon: 'subway.png'
+    
+  });
+  marker23.addListener('click', function() {
+    infowindow23.open(map, marker23);
+
+  });
+  /*палац спорту*/
+  var contentString24 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading"></h1>'+
+      '<p><b>(m) palats Sporty</b>'
+      ;
+
+  var infowindow24 = new google.maps.InfoWindow({
+
+    content: contentString24
+  });
+
+var marker24 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.439652, 30.519533),
+    map: map,
+    title: '(m) palats Sporty',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'T',
+    icon: 'subway.png'
+    
+  });
+  marker24.addListener('click', function() {
+    infowindow24.open(map, marker24);
+
+  });
+  /*м олимпийская*/
+
+  var contentString25 = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading"></h1>'+
+      '<p><b>(m) Olimpijskaya</b>'
+      ;
+
+  var infowindow25 = new google.maps.InfoWindow({
+
+    content: contentString25
+  });
+
+var marker25 = new google.maps.Marker({
+    position: new google.maps.LatLng(50.432249, 30.516762),
+    map: map,
+    title: '(m) Olimpijskaya',
+   /* animation: google.maps.Animation.DROP,*/
+    //label: 'T',
+    icon: 'subway.png'
+    
+  });
+  marker25.addListener('click', function() {
+    infowindow25.open(map, marker25);
+
+  });
+  /*myinfo = new google.maps.InfoWindow({ 
+      content: contentString,
+      pixelOffset: new google.maps.Size(0, 60)
+    });
+    myinfo.open(map, marker);*/
+
+    var infowindow = new google.maps.InfoWindow({  
+  content: contentString 
+});  
+    infowindow.open(map, marker); 
+
+            }
+        </script>
 </head>
 <body>
     <script>
@@ -30,11 +781,12 @@
 				<img src="img/logo.png" alt="logo">
 			</a>
 			<ul class="header-nav">
-				<li><a href="#">Будинок</a></li>
+                <li class="mobile"></li>
+				<li><a href="#" class="separate">Будинок</a></li>
 				<li><a href="#place">Розташування</a></li>
 				<li><a href="#aparments">Квартири</a></li>
 				<li><a href="#builder">Забудовник</a></li>
-				<li><a href="#">Будівництво</a></li>
+				<li><a href="#" class="separate">Будівництво</a></li>
 				<li><a href="#contact">Зв'язок</a></li>
 			</ul>
 			<div class="header-callback">
@@ -44,12 +796,15 @@
 		</div>
 	</header>
 	<section class="first">
+        <span class="block1"></span>
+        <span class="block2"></span>
+        <span class="trigger-0"></span>
 		<h2 class="wow bounceInLeft">
 			Зустрічайте новий житловий комплекс
 			<em>від творців “NEW YORK concept house”!</em>
 		</h2>
-		<span class="subheader wow bounceInRight">Американська якість.</span><br>
-		<span class="subheader wow bounceInRight">Українська ціна.</span>
+		<span class="subheader wow bounceInRight"><span>Американська</span><span>якість.</span></span><br>
+		<span class="subheader wow bounceInRight"><span>Українська </span><span>ціна.</span></span>
         <div class="cd-radial-slider-wrapper slider wow fadeInDown">
             <ul class="cd-radial-slider" data-radius1="60" data-radius2="1364" data-centerx1="110" data-centerx2="1290">
                 <li class="visible">
@@ -192,28 +947,37 @@
         </div> <!-- .cd-radial-slider-wrapper -->
 	</section>
 	<section class="second" id="place">
-		<h2 class="title wow slideInLeft">Розташування</h2>
-        <i class="wow slideInRight"></i>
+        <span class="trigger-1"></span>
+		<h2 class="title">Розташування</h2>
+        <i class="line"></i>
 	</section>
 	<section class="third light">
+        <span class="lamps wrapper">
+            <i></i>
+            <i></i>
+            <i></i>
+        </span>
 		<div class="wrapper">
 			<h2 class="subheader wow fadeInDown">
-				“CHICAGO central house” розташований у самому
-			</h2>
-			<h2 class="subheader wow fadeInDown">
-				центрі Києва, за адресою: вулиця Антоновича, 44
-			</h2>
-			<h2 class="subheader wow fadeInDown">
-				(на розі з вулицею Жилянською).
+				<span>“CHICAGO central house”</span> <span>розташований у самому</span>
+                <span>центрі Києва, за адресою:</span><span> вулиця Антоновича, 44</span> 
 			</h2>
 			<p class="more wow fadeInUp">
 				Це той самий щасливий випадок, коли життя у історичному центрі столиці поєднується із енергетикою ділових кварталів. Тепер не треба витрачати час, щоб дістатися до роботи, якщо ваш офіс розташований у київському сіті. Також за декілька хвилин пішки ви дістанетесь до головної вулиці міста, а усе, що потрібно для комфортного насиченого життя, знаходиться поряд із вашим будинком.
 			</p>
 		</div>
 	</section>
-	<section class="fourth">
-		<ul class="wrapper wow flipInY">
-			<li>
+    <section class="sixth">
+        <div id="map"></div>
+    </section>
+    <section class="seventh">
+        <span class="trigger-2"></span>
+        <h2 class="title">Панорама</h2>
+        <i class="line"></i>
+    </section>
+    <section class="fourth">
+        <ul class="wrapper wow pulse">
+            <li>
                 <div class="clock">
                     <span class="round"></span>
                     <div class="hours-container">
@@ -224,64 +988,68 @@
                     </div>
                 </div>
             </li>
-			<li>
-				1
-				<span class="subheader">хвилина</span>
-				<span class="text">
-					пішки до найближчих<br> кафе та ресторанів
-				</span>
-			</li>
-			<li>
-				1
-				<span class="subheader">хвилина</span>
-				<span class="text">
-					пішки до найближчих<br> торгівельних центрів
-				</span>
-			</li>
-			<li>
-				2
-				<span class="subheader">хвилина</span>
-				<span class="text">
-					пішки до найближчої<br> станції метро
-				</span>
-			</li>
-			<li>
-				3
-				<span class="subheader">хвилини</span>
-				<span class="text">
-					пішки до Театру оперети<br> та НСК «Олімпійський»
-				</span>
-			</li>
-			<li>
-				5
-				<span class="subheader">хвилин</span>
-				<span class="text">
-					на автомобілі<br> до Хрещатику
-				</span>
-			</li>
-			<li>
-				7
-				<span class="subheader">хвилин</span>
-				<span class="text">
-					пішки до<br> художніх музеїв
-				</span>
-			</li>
-			<li>
-				7
-				<span class="subheader">хвилин</span>
-				<span class="text">
-					пішки до<br> парку Шевченка
-				</span>
-			</li>
-		</ul>
-	</section>
+            <li>
+                1
+                <span class="subheader"><span>хвилина</span></span>
+                <span class="text">
+                    пішки до найближчих<br> кафе та ресторанів
+                </span>
+            </li>
+            <li>
+                1
+                <span class="subheader"><span>хвилина</span></span>
+                <span class="text">
+                    пішки до найближчих<br> торгівельних центрів
+                </span>
+            </li>
+            <li>
+                2
+                <span class="subheader"><span>хвилина</span></span>
+                <span class="text">
+                    пішки до найближчої<br> станції метро
+                </span>
+            </li>
+            <li>
+                3
+                <span class="subheader"><span>хвилини</span></span>
+                <span class="text">
+                    пішки до Театру оперети<br> та НСК «Олімпійський»
+                </span>
+            </li>
+            <li>
+                5
+                <span class="subheader"><span>хвилин</span></span>
+                <span class="text">
+                    на автомобілі<br> до Хрещатику
+                </span>
+            </li>
+            <li>
+                7
+                <span class="subheader"><span>хвилин</span></span>
+                <span class="text">
+                    пішки до<br> художніх музеїв
+                </span>
+            </li>
+            <li>
+                7
+                <span class="subheader"><span>хвилин</span></span>
+                <span class="text">
+                    пішки до<br> парку Шевченка
+                </span>
+            </li>
+        </ul>
+    </section>
 	<section class="fifth light">
+        <span class="lamps wrapper">
+            <i></i>
+            <i></i>
+            <i></i>
+        </span>
 		<div class="wrapper">
 			<h2 class="subheader wow fadeInDown">
-				Щоб дістатися найближчих кафе та ресторанів,
-			</h2>
-			<h2 class="subheader wow fadeInDown">
-				вам навіть непотрібно залишати будинок,
+                <span>Щоб дістатися</span><span>найближчих кафе та</span>
+                <span> ресторанів,</span>
+                <span>вам навіть </span><span>непотрібно залишати</span><span>будинок,</span> 
 			</h2>
 			<p class="more wow fadeInUp">
 				адже декілька закладів будуть розташовані на перших поверхах “CHICAGO central house”. А ще ми подбали про те, щоб ви могли насолоджуватися велосипедними прогулянками центром міста – у будинку передбачена вело-паркінг та пункт прокату велосипедів.
@@ -289,20 +1057,128 @@
 			</p>
 		</div>
 	</section>
-	<section class="sixth"></section>
-	<section class="seventh">
-        <h2 class="title wow slideInLeft">Панорама</h2>
-        <i class="wow slideInRight"></i>
+    <section class="eleventh">
+        <span class="trigger-5"></span>
+        <h2 class="title">Цінності</h2>
+        <i class="line"></i>
+    </section>
+    <section class="twelfth light">
+        <div class="grid clearfix">
+            <figure class="effect-milo wow fadeInLeft">
+                <img src="img/gal-1.jpg" alt="img01"/>
+                <figcaption>
+                    <h2>Art</h2>
+                    <p>життя як мистецтво, <em>будинок як шедевр</em></p>
+                    <a href="#">View more</a>
+                </figcaption>
+            </figure>
+            <figure class="effect-milo wow fadeInDown">
+                <img src="img/gal-2.jpg" alt="img02"/>
+                <figcaption>
+                    <h2>Bright</h2>
+                    <p>життя як мистецтво, <em>будинок як шедевр</em></p>
+                    <a href="#">View more</a>
+                </figcaption>
+            </figure>
+            <figure class="effect-milo wow fadeInUp">
+                <img src="img/gal-3.jpg" alt="img03"/>
+                <figcaption>
+                    <h2>Central</h2>
+                    <p>життя як мистецтво, <em>будинок як шедевр</em></p>
+                    <a href="#">View more</a>
+                </figcaption>
+            </figure>
+            <figure class="effect-milo wow fadeInRight">
+                <img src="img/gal-4.jpg" alt="img04"/>
+                <figcaption>
+                    <h2>Different</h2>
+                    <p>життя як мистецтво, <em>будинок як шедевр</em></p>
+                    <a href="#">View more</a>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+	<section class="ninth">
+        <span class="trigger-4"></span>
+        <h2 class="title">Переваги</h2>
+        <i class="line"></i>
 	</section>
-	<section class="eigth">
+    <section class="tenth">
+        <ul class="wrapper clearfix">
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-1.png" alt="advantage-1">
+                <span class="subheader"><span>Американський </span><span>рівень життя,</span></span>
+                <span class="last">доступний тепер в Україні</span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-2.png" alt="advantage-2">
+                <span class="subheader"><span>Якісне </span><span>будівництво</span></span>
+                <span class="last">від надійного забудовника</span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-3.png" alt="advantage-3">
+                <span class="subheader"><span>Дружні та </span><span>кваліфіковані</span></span>
+                <span class="last">
+                    спеціалісти з продажу
+                </span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-4.png" alt="advantage-4">
+                <span class="subheader"><span>Центральне</span><span>розташування –</span></span>
+                <span class="last">у пішій доступності від сіті та від старого міста</span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-5.png" alt="advantage-5">
+                <span class="subheader"><span>Насичена міська </span><span>інфраструктура:</span></span>
+                <span class="last">магазини, кафе, ресторани, сервісні центри</span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-6.png" alt="advantage-6">
+                <span class="subheader"><span>Вільне</span><span>планування</span></span>
+                <span class="last">квартир, а також послуги кваліфікованих архітекторів</span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-7.png" alt="advantage-7">
+                <span class="subheader"><span>Унікальна</span><span>архітектура</span></span>
+                <span class="last">будинку, що виконана у яскравому чиказькому стилі</span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-8.png" alt="advantage-8">
+                <span class="subheader" style="margin: 0 -8px"><span>Шедеври сучасного</span><span>мистецтва</span></span>
+                <span class="last">у громадському просторі будинку</span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-9.png" alt="advantage-9">
+                <span class="subheader"><span>Гармонійна</span><span>естетика</span></span>
+                <span class="last">прибудинкових територій</span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-10.png" alt="advantage-10">
+                <span class="subheader"><span>Розкішна</span><span>панорама</span></span>
+                <span class="last">історичного центру Києва</span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-11.png" alt="advantage-11">
+                <span class="subheader"><span>“CHICAGO</span><span>central house”  – </span></span>
+                <span class="last">новий архітектурний символ столиці</span>
+            </li>
+            <li class="wow bounceIn">
+                <img src="img/icons/advantage-12.png" alt="advantage-12">
+                <span class="subheader"><span>Професійний</span><span>консьєрж-сервіс</span></span>
+                <span class="last">для усіх мешканців будинку</span>
+            </li>
+        </ul>
+    </section>
+    <section class="eigth">
         <span class="lamps wrapper">
             <i></i>
             <i></i>
             <i></i>
             <i></i>
         </span>
-        <h2 class="title wow slideInLeft">Галерея</h2>
-        <i class="wow slideInRight"></i>
+        <span class="trigger-3"></span>
+        <h2 class="title">Галерея</h2>
+        <i class="line"></i>
         <div class="gallery">
             <a href="img/gallery/1.jpg" class="wow fadeInLeft" rel="gallery">
                 <img src="img/gallery/1.jpg" alt="img-gallery">
@@ -338,140 +1214,19 @@
                 <img src="img/gallery/11.jpg" alt="img-gallery">
             </a>
         </div>
-		<button class="button button-red">Більше фото</button>
-	</section>
-	<section class="ninth">
-        <h2 class="title wow slideInLeft">Переваги</h2>
-        <i class="wow slideInRight"></i>
-	</section>
-	<section class="tenth">
-		<ul class="wrapper clearfix">
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-1.png" alt="advantage-1">
-				<span class="subheader">Американський </span>
-				<span class="subheader">рівень життя, </span>
-				<span class="last">доступний тепер в Україні</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-2.png" alt="advantage-2">
-				<span class="subheader">Якісне </span>
-				<span class="subheader">будівництво </span>
-				<span class="last">від надійного забудовника</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-3.png" alt="advantage-3">
-				<span class="subheader">Дружні та </span>
-				<span class="subheader">кваліфіковані</span>
-				<span class="last">
-					спеціалісти з продажу
-				</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-4.png" alt="advantage-4">
-				<span class="subheader">Центральне </span>
-				<span class="subheader">розташування – </span>
-				<span class="last">у пішій доступності від сіті та від старого міста</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-5.png" alt="advantage-5">
-				<span class="subheader">Насичена міська </span>
-				<span class="subheader">інфраструктура: </span>
-				<span class="last">магазини, кафе, ресторани, сервісні центри</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-6.png" alt="advantage-6">
-				<span class="subheader">Вільне</span>
-				<span class="subheader">планування</span>
-				<span class="last">квартир, а також послуги кваліфікованих архітекторів</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-7.png" alt="advantage-7">
-				<span class="subheader">Унікальна</span>
-				<span class="subheader">архітектура</span>
-				<span class="last">будинку, що виконана у яскравому чиказькому стилі</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-8.png" alt="advantage-8">
-				<span class="subheader" style="margin-right: -18px">Шедеври сучасного</span>
-				<span class="subheader">мистецтва</span>
-				<span class="last">у громадському просторі будинку</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-9.png" alt="advantage-9">
-				<span class="subheader">Гармонійна</span>
-				<span class="subheader">естетика</span>
-				<span class="last">прибудинкових територій</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-10.png" alt="advantage-10">
-				<span class="subheader">Розкішна</span>
-				<span class="subheader">панорама</span>
-				<span class="last">історичного центру Києва</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-11.png" alt="advantage-11">
-				<span class="subheader">“CHICAGO </span>
-				<span class="subheader">central house”  – </span>
-				<span class="last">новий архітектурний символ столиці</span>
-			</li>
-			<li class="wow bounceIn">
-				<img src="img/icons/advantage-12.png" alt="advantage-12">
-				<span class="subheader">Професійний </span>
-				<span class="subheader">консьєрж-сервіс </span>
-				<span class="last">для усіх мешканців будинку</span>
-			</li>
-		</ul>
-	</section>
-	<section class="eleventh">
-        <h2 class="title wow slideInLeft">Цінності</h2>
-        <i class="wow slideInRight"></i>
-	</section>
-	<section class="twelfth light">
-		<div class="grid clearfix">
-			<figure class="effect-milo wow fadeInLeft">
-				<img src="img/gal-1.jpg" alt="img01"/>
-				<figcaption>
-					<h2>Art</h2>
-					<p>життя як мистецтво, <em>будинок як шедевр</em></p>
-					<a href="#">View more</a>
-				</figcaption>
-			</figure>
-			<figure class="effect-milo wow fadeInDown">
-				<img src="img/gal-2.jpg" alt="img02"/>
-				<figcaption>
-					<h2>Bright</h2>
-					<p>життя як мистецтво, <em>будинок як шедевр</em></p>
-					<a href="#">View more</a>
-				</figcaption>
-			</figure>
-			<figure class="effect-milo wow fadeInUp">
-				<img src="img/gal-3.jpg" alt="img03"/>
-				<figcaption>
-					<h2>Central</h2>
-					<p>життя як мистецтво, <em>будинок як шедевр</em></p>
-					<a href="#">View more</a>
-				</figcaption>
-			</figure>
-			<figure class="effect-milo wow fadeInRight">
-				<img src="img/gal-4.jpg" alt="img04"/>
-				<figcaption>
-					<h2>Different</h2>
-					<p>життя як мистецтво, <em>будинок як шедевр</em></p>
-					<a href="#">View more</a>
-				</figcaption>
-			</figure>
-		</div>
-	</section>
+        <button class="button button-red">Більше фото</button>
+    </section>
 	<section class="thirteenth" id="aparments">
-        <h2 class="title wow slideInLeft">Квартири</h2>
-        <i class="wow slideInRight"></i>
+        <span class="trigger-6"></span>
+        <h2 class="title">Квартири</h2>
+        <i class="line"></i>
 	</section>
 	<section class="fourteenth light">
 		<div class="wrapper">
+            <h2 class="subheader wow fadeInDown"><span>Оберіть свою квартиру</span><span>у “CHICAGO central house” </span><span>просто зараз!</span></h2>
+            <img src="img/central.jpg" alt="central" class="img-first wow fadeInRight">
+            <img src="img/gallery.jpg" alt="gallery" class="img-second wow fadeInRight">
 			<div class="text wow fadeInLeft">
-				<h2 class="subheader">Оберіть свою квартиру</h2>
-				<h2 class="subheader">у “CHICAGO central house” </h2>
-				<h2 class="subheader">просто зараз!</h2>
 				<p>
 					Ми пропонуємо вільне планування житлового простору – саме ви вирішуєте, як буде влаштована ваша квартира.  В в цьому допоможуть досвідчені архітектори, яких ми вам надамо, щоб забезпечити втілення усіх ваших бажань.
 				</p>
@@ -482,18 +1237,18 @@
 					Ваша участь у проекті – найкраща нагорода для нас. Отже давайте працювати разом –  звертайтеся до наших спеціалістів з будь-яких питань, пов’язаних із вашим майбутнім житлом.
 				</p>
 				<button class="button button-red">Обрати квартиру</button>
-				<span>Щоб отримати додаткову інформацію, будь ласка, зв'яжіться із нами</span>
+				<span class="more-info">Щоб отримати додаткову інформацію, будь ласка, зв'яжіться із нами</span>
 			</div>
-			<img src="img/central.jpg" alt="central" class="img-first wow fadeInRight">
-			<img src="img/gallery.jpg" alt="gallery" class="img-second wow fadeInRight">
 		</div>
 	</section>
 	<section class="fifteenth" id="builder">
-        <h2 class="title wow slideInLeft">Забудовник</h2>
-        <i class="wow slideInRight"></i>
+        <span class="trigger-7"></span>
+        <h2 class="title">Забудовник</h2>
+        <i class="line"></i>
 	</section>
 	<section class="sixteenth light">
 		<div class="wrapper">
+            <span class="subheader"><span>Забудовником ЖК “CHICAGO</span><span>central house” виступає</span><span>компанія «КДД Інжиніринг»,</span><span>замовник об’єкту – </span><span>ТОВ «Антоновича-44»</span></span>
 			<div class="left-part wow fadeInLeft">
 				<img src="img/icons/logo-kiev.png" alt="logo-kiev">
 				<p>
@@ -502,11 +1257,6 @@
 				</p>
 			</div>
 			<div class="right-part wow fadeInRight">
-				<span class="subheader">Забудовником ЖК “CHICAGO</span>
-				<span class="subheader">central house” виступає</span>
-				<span class="subheader">компанія «КДД Інжиніринг»,</span>
-				<span class="subheader">замовник об’єкту – </span>
-				<span class="subheader">ТОВ «Антоновича-44»</span>
 				<p>
 					Будівництво ЖК “CHICAGO central house” здійснюється з отриманням усіх норм та вимог чинного законодавства України у галузі будівництва та на підставі всієї необхідної
 				</p>
@@ -546,23 +1296,13 @@
         </form>
 	</footer>
     <script src="js/lib/snap.svg-min.js"></script>
-    <script src="js/lib/main.js"></script> <!-- Resource jQuery -->
+    <script src="js/lib/slider.js"></script>
     <script src="js/jquery.fancybox.pack.js"></script>
     <script src="js/jquery.fancybox-thumbs.js"></script>
     <script src="js/lib/wow.min.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEm7Lxqq2j4nkRmOZC5NA3vNIjYWvYU3o&callback=initMap">
+    </script>
 	<script src="js/scripts.js"></script>
-	<script>
-		// For Demo purposes only (show hover effect on mobile devices)
-		[].slice.call( document.querySelectorAll('a[href="#"') ).forEach( function(el) {
-			el.addEventListener( 'click', function(ev) { ev.preventDefault(); } );
-		} );
-        new WOW().init();
-        // build scene
-        // var scene = new ScrollMagic.Scene({triggerElement: ".header", duration: 300})
-        // // animate color and top border in relation to scroll position
-        // .setTween(".slider", {borderTop: "30px solid white", backgroundColor: "blue", scale: 0.7}) // the tween durtion can be omitted and defaults to 1
-        // .addIndicators({name: "2 (duration: 300)"}) // add indicators (requires plugin)
-        // .addTo(controller);
-	</script>
 </body>
 </html>
